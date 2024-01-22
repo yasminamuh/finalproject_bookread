@@ -1,0 +1,182 @@
+/* #bla{
+    align-items: center;
+    background-color: blueviolet;
+    align-content: center;
+} */
+#bla{
+     display: grid;
+     justify-content:center; 
+     grid-template-columns: auto auto auto auto; 
+     gap: 20px;
+     align-items:center;
+     margin-top: 15px;
+     max-width:100%;
+}
+#toreaddiv{
+  
+    display: grid;
+    gap:15px;
+    align-items:center;
+    justify-content: center;
+}
+
+
+.bookadded{
+    font-size: larger;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(86, 14, 50, 0.701);
+    background-color: rgba(242, 176, 159, 0.523);
+    box-sizing: content-box;
+    height: auto;
+    width: 500px;
+    border-style:groove;
+    border-radius: 30px;
+    border:5px  rgb(255, 206, 206) ;
+
+}
+.ji img{
+    border-radius: 30px;
+    opacity:0.8;
+}
+.jin img{
+    border-radius: 30px;
+    height: 200px;
+    width: 50%;
+}
+.ji{
+    border:5px rgba(242, 176, 159, 0.32);
+     /* rgb(255, 206, 206) ; */
+    border-style:groove;
+    border-radius: 30px;
+    /* text-align: center; */
+    /* overflow: auto;   */
+    color:rgba(86, 14, 50, 0.941);
+    font-size: large;
+    background-color: rgba(242, 176, 159, 0.726);
+    /* max-height: max-content; */
+    /* right: 100px; */
+    height: auto;
+    width: 300px;
+    
+    /* align-self: center; */
+    /* width: auto;    
+    height: fit-content; */
+    /* box-sizing: content-box; */
+    /* display: inline-block; */
+}
+.jin{
+    border:5px  rgb(255, 206, 206) ;
+    border-style:groove;
+    border-radius: 30px;
+    color:rgba(86, 14, 50, 0.941);
+    font-size: larger;
+    background-color: rgba(242, 176, 159, 0.523);
+    height: auto;
+    margin:auto;
+    width: 50%;
+    padding: 10px;
+}
+#content{
+    text-align: center;
+    color: rgba(86, 14, 50, 0.701);
+    font-size:xx-large;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.p1,.p2,.p3,.p4,.p5,.p6{
+    font-weight: bold;
+    font-style: italic;
+    color:rgb(86, 14, 50) ;
+    font-size: larger;
+}
+
+.d1,.d2,.d3,.d4,.d5,.d6{
+    color:rgba(86, 14, 50, 0.715) ;
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+}
+
+
+body{
+    background-image:  url("homeback.jpg") ;
+    background-size: cover;
+    background-repeat:no-repeat;
+    text-align: center;
+    max-width: 100%;
+}
+
+button{
+    color:rgba(86, 14, 50, 0.701);
+    background-color:rgb(242, 176, 159) ;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    font-size:medium;
+    border-radius: 30px ;
+    border-color: rgb(250, 190, 225);
+    margin:20px;}
+
+#logout, #gotoread ,#addabook{
+    color:rgba(86, 14, 50, 0.701);
+    background-color:rgb(242, 176, 159) ;
+    padding: 10px;
+    width: auto;
+    /* height: auto; */
+    font-size:medium;
+    border-radius: 20px ;
+    border-color: rgb(250, 190, 225);
+    margin:20px;}
+
+input {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align: center;
+        background-color:rgb(240, 183, 160);
+        border-radius: 20px;
+        color:rgb(108, 60, 36);
+        font-size: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     }   
+ #addingbook,#bookpublishdate,#addingnewbook,#logout2{
+    padding: 15px 20px;
+    color:rgb(108, 60, 36);
+    width: 25%;
+    color:rgba(86, 14, 50, 0.701);
+
+
+ }    
+ #search1{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color:rgb(240, 183, 160);
+    border-radius: 20px;
+    color:rgb(108, 60, 36);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+ } 
+ #search2 {
+    color:rgba(86, 14, 50, 0.701);
+    background-color:rgb(240, 183, 160) ;
+    padding: 10px;
+    width: 100px;
+    /* height: auto; */
+    font-size:large;
+    border-radius: 20px ;
+    border-color: rgb(250, 190, 225);
+    margin:20px;
+ }
+ h1,h2{
+    font-size:xx-large;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color:rgba(86, 14, 50, 0.701);
+ }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books search</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+ <!--- <script src="firstdict.js"></script>-->
+</head>
+<body>
+        {% for x in test %}
+        <div class="jin"> 
+          <img src='{{x["image"]}}' width="200px" height="200px">  
+
+            <p class="p1">{{" The Book name is" }}</p><p class="d1">{{x["name"]}}</p>
+            <p class="p2">{{" The Author is"}} </p> <p class="d2">{{x["author"]}}</p>
+            <!-- <p class="p33">{{" type: " +x["type"]}}</p>
+            <p class="p44">{{" Description: " +x["description"]}}</p>
+            <p class="p55" >{{" publish date: " +x["publish date"]}}</p> -->
+            <a href="/books/details/{{x['name']}}/{{x['author']}}">
+              <button>Enter</button>
+            </a>
+
+
+        </div> 
+         {%endfor%}
+
+
+<!-- <script src="static/javascriptfiles/script.js"></script> -->
+</body>
+</html>

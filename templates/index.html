@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>home page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+ <!--- <script src="firstdict.js"></script>-->
+</head>
+<body>
+    <h1> Welcome to home page</h1>
+    <p id="qouti"> “There is no friend as loyal as a book.” </p>
+    <div id="homeindex">
+     <div id="first">  
+    <a href="/signup">
+        <button>Sign up</button>
+    </a>
+    </div> 
+    <div>
+    <a href="/login">
+        <button>Log in</button>
+    </a>
+    </div>
+    <div>
+    <a href="/books">
+        <button>Go to Books Page</button>
+    </a>
+    </div>
+    </div>
+
+
+    <!-- <script src="static/javascriptfiles/script.js"></script> -->
+  
+</body>
+</html>

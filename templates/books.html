@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ <!--- <script src="firstdict.js"></script>-->
+</head>
+<body>
+       <div id="content">
+
+       </div>
+       <form action="/books/search" method="get">
+        <input type="text" placeholder="search for a book" id="search1" name ="search">
+        <input type="submit" id="search2" value="search">
+       </form>
+       <a href="/add_book">
+        <button id="addabook">Add a Book</button>
+       </a>
+       <a href="/toread">
+        <button id="gotoread">Go to your Read List</button>
+       </a>
+       <input type="button" id="logout" value="log out">
+       <div id="bla">
+            {% for x in test %}
+            <div class="ji">      
+              <img src='{{x["image"]}}' width="100%" height="200px">  
+                <p class="p1">{{" The Book name is"}}</p > <p class="d1">{{x["name"]}}</p>
+                <p class="p2">{{" The Author is" }} </p><p class="d2">{{x["author"]}}</p>
+                <!-- <p class="p3">{{" Type" }} </p><p class="d3">{{x["type"]}}</p> -->
+                
+                <!-- <p class="p4">{{" Description: " +x["description"]}}</p>
+                <p class="p5">{{" publish date: " +x["publish date"]}}</p> -->
+                <a href="/books/details/{{x['name']}}/{{x['author']}}">
+                  <button>view</button>
+                </a>
+            </div> 
+             {%endfor%}
+       </div>
+
+
+       <!-- <script src="static/javascriptfiles/books.js"></script> -->
+       <script src="{{ url_for('static', filename='javascriptfiles/books.js') }}"></script>
+</body>
+</html>

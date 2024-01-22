@@ -1,0 +1,79 @@
+{
+    "users": [
+        {
+            "email": "yasminamuh1106@gmail.com",
+            "username": "yasmina",
+            "password": "1106"
+        },
+        {
+            "email": "basemmohamed@gmail.com",
+            "username": "basem",
+            "password": "ba11"
+        },
+        {
+            "email": "hodhod@gmail.com",
+            "username": "hodhod",
+            "password": "1234"
+        },
+        {
+            "email": "amonawow@gmail.com",
+            "username": "amona",
+            "password": "woow"
+        },
+        {
+            "email": "shosho@gmail.com",
+            "username": "shosho",
+            "password": "shosho"
+        },
+        {
+            "email": "emanmuh@gmail.com",
+            "username": "eman muhammed",
+            "password": "eman2"
+        },
+        {
+            "email": "dodadoda@gmail.com",
+            "username": "doda",
+            "password": "123456"
+        },
+        {
+            "email": "newone@gmail.com",
+            "username": "newone",
+            "password": "new1"
+        },
+        {
+            "email": "hoda@gmail.com",
+            "username": "hoda",
+            "password": "hoda"
+        },
+        {
+            "email": "shosho@gmail.com",
+            "username": "shosho2",
+            "password": "wwww"
+        },
+        {
+            "email": "yasmina1106@gmail.com",
+            "username": "yasmina",
+            "password": "1106"
+        },
+        {
+            "email": "hodhoda@gmail.com",
+            "username": "hodhoda",
+            "password": "hodhod"
+        },
+        {
+            "email": "yasminahuda@gmail.com",
+            "username": "yasminahuda",
+            "password": "omar123"
+        },
+        {
+            "email": "yasminahuda11@gmail.com",
+            "username": "yasminahuda",
+            "password": "omar123"
+        },
+        {
+            "email": "newanimal@gmail.com",
+            "username": "animal",
+            "password": "animal"
+        }
+    ]
+}

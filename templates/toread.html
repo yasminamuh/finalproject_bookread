@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To Read List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <h1>welcome to your read list</h1>
+  <div id="toreaddiv">
+    {% for x in data %}
+    <div class="bookadded">
+      <p > {{x}}</p> 
+      <a href="/toread/removefrom/{{x}}">
+        <button>Remove</button>
+      </a>
+    </div> 
+     {%endfor%}
+    </div>
+    <div id="toreaddiv2">
+     <a href="/books">
+      <button id="addingnewbook">Add New Book</button>
+    </a>
+    <input type="button" id="logout2" value="log out">
+    </div>
+    <script src="static/javascriptfiles/toread.js"></script> 
+</body>
+</html>

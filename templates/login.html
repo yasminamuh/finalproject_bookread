@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+    <h1> Welcome to log in page</h1>
+    <form action="/logincheck" method="get">
+        <input type="email" placeholder="Enter your email: " id="email" name="email">
+
+        <input type="text" placeholder="Enter your user name: " id="username2" name="username">
+
+        <input type="password" placeholder="Enter your password: " id="password" name="pass" passwordrules="minlength:4">
+
+        <input type="submit" value="Enter" id="checkpass">
+    </form>
+        
+
+
+    <script src="static/javascriptfiles/login.js"></script>
+</body>
+</html>

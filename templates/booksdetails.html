@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Book</title>
+  <!-- i had problems while loading this css file so if i face any other problems i will use this way! -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+ <!--- <script src="firstdict.js"></script>-->
+</head>
+<body>
+    <h1>hello this is books details</h1>
+
+    {% for x in data %}
+    <div class="jin"> 
+        <img src='{{x["image"]}}'>  
+
+        <p class="p1">{{" The Book name is" }} </p><p class="d1">{{x["name"]}}</p>
+        <p class="p2">{{" The Author is" }} </p> <p class="d2">{{x["author"]}}</p>
+        <p class="p3">{{" Type" }} </p> <p class="d3">{{x["type"]}}</p>
+        <p class="p4">{{" Description" }} </p> <p class="d4">{{x["description"]}}</p>
+        <p class="p5">{{" Publish date"}} </p> <p class="d5">{{x["publish date"]}}</p>
+        <p class="p6" >{{" Reviews" }}  </p> 
+        <p class="d6">    {%for i in x["reviews"]%}
+                      {{i}}
+                        <br>
+                      {%endfor%} </p>
+         
+        <a href="/addtoread/{{x['name']}}/{{x['author']}}">
+          <button id="toread">Add to your To Read List</button>
+      </a> 
+        <form action="/books/details/add reveiw/{{x['name']}}/{{x['author']}}" method="get">
+          <input type="text" placeholder="what do you think? " id="review" name="reveiw">
+                 <input type="submit" value="Add your review" id="review">
+        </form>
+        <!-- <a href="/books/details/add reveiw/{{x['name']}}/">
+          <button>Enter</button>
+        </a> -->
+    </div> 
+    {%endfor%}
+
+    <!-- <script src="/static/javascriptfiles/booksdetails.js"></script> -->
+
+</body>
+</html>   
