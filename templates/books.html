@@ -12,17 +12,22 @@
        <div id="content">
 
        </div>
+       <div id="addnewadmin">
+
+       </div>
        <form action="/books/search" method="get">
         <input type="text" placeholder="search for a book" id="search1" name ="search">
         <input type="submit" id="search2" value="search">
        </form>
-       <a href="/add_book">
+       <div  id="forbuttons">
+       <!-- <a href="/add_book">
         <button id="addabook">Add a Book</button>
-       </a>
+       </a> -->
        <a href="/toread">
         <button id="gotoread">Go to your Read List</button>
        </a>
        <input type="button" id="logout" value="log out">
+      </div>
        <div id="bla">
             {% for x in test %}
             <div class="ji">      

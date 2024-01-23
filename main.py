@@ -76,7 +76,7 @@ def accsessusername(name):
     with open("temp.json") as json_file:
            datatemp=json.load(json_file)  
            datatemp["user"] = name
-           datatemp["is admin"]= isadmin
+           datatemp["is_admin"]= isadmin
            writinginto(datatemp,"temp.json")
  #-----------------------------------------------------------------------------#
 
@@ -517,6 +517,58 @@ def logout():
         ##if there in no current user so we will redirect to not user page
         if data["user"]!=None:
            data["user"]=None
+           data["is_admin"]= False
            writinginto(data,"temp.json")
            return render_template("logout.html")
         else: return render_template("notuser.html")
+
+
+##--------------------
+@app.route("/books/edit/<name>/<author>")
+def editbook(name,author):
+    ## i will add the functionality..
+    return "we will edit a book"                
+
+@app.route("/books/delete/<name>/<author>")
+def deletebook(name,author):
+    ## i will add the functionality..
+    return "we will delete a book"   
+
+
+def add_admin(email,name,password):
+    ##open login json file to update it with the new user data!
+    with open("login.json") as json_file:
+      data=json.load(json_file) 
+      admins=data["admins"]
+      choice=True
+      for item in admins:
+          #check if this email is exist to stop creating new account
+          if item["email"]==email:
+              choice=False
+      #this is a new account so we will add it into our file        
+      if choice==True:        
+           tempuser={"email": email,"username": name, "password": password}
+           #we append the users array with this object
+           admins.append(tempuser)
+           writinginto(data,"login.json")
+      return choice  
+
+@app.route("/newadmin")
+def newadmin():
+    return render_template("newadmin.html")        
+@app.route("/newadmincheck")
+def create_new_admin():
+    addemail=flask.request.args.get("addemail:")
+    addusername=flask.request.args.get("adduser:")
+    addpassword=flask.request.args.get("addpass:")
+    signcheck=True
+    if addemail!= "" and addusername!="" and addpassword!="":
+      signcheck= add_admin(addemail,addusername,addpassword)
+      ##if it's a new user go and add his email into userbook json file so he will have a to read list
+      if signcheck==True:  
+       accsessusername(addemail)
+      with open("books.json") as json_file:
+         data=json.load(json_file) 
+      booky=data["books"]       
+
+      return render_template("books.html",test=booky)

@@ -76,12 +76,26 @@
             "password": "animal"
         }
     ],
-    "admins":
-    [
+    "admins": [
         {
             "email": "admin@gmail.com",
             "username": "admin",
             "password": "admin1"
+        },
+        {
+            "email": "admin2@gmail.com",
+            "username": "admin2",
+            "password": "admin2"
+        },
+        {
+            "email": "admin3@gmail.com",
+            "username": "admin3",
+            "password": "admin3"
+        },
+        {
+            "email": "admin4@gmail.com",
+            "username": "admin4",
+            "password": "admin4"
         }
     ]
 }
