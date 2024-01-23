@@ -22,6 +22,7 @@
         <p class="p3">{{" Type" }} </p> <p class="d3">{{x["type"]}}</p>
         <p class="p4">{{" Description" }} </p> <p class="d4">{{x["description"]}}</p>
         <p class="p5">{{" Publish date"}} </p> <p class="d5">{{x["publish date"]}}</p>
+        <p class="p7">{{"This Book has been published in "}}</p> <p class="d7"> {{x["years"]}}</p>
         <p class="p6" >{{" Reviews" }}  </p> 
         <p class="d6">    {%for i in x["reviews"]%}
                       {{i}}
@@ -35,6 +36,12 @@
           <input type="text" placeholder="what do you think? " id="review" name="reveiw">
                  <input type="submit" value="Add your review" id="review">
         </form>
+        
+                 
+        <a href="/books">
+          <button id="toread">Back to home page</button>
+        </a> 
+
         <!-- <a href="/books/details/add reveiw/{{x['name']}}/">
           <button>Enter</button>
         </a> -->

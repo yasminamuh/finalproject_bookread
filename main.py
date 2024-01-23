@@ -2,6 +2,7 @@ import flask
 import json
 from flask import render_template, request , flash , url_for ,redirect
 from werkzeug.utils import secure_filename
+from datetime import datetime
 ##working with a flask!!
 app= flask.Flask("main")
 
@@ -144,7 +145,7 @@ def signupadd():
 # start working in books!
 #-----------------------------------------------------------------------------#        
 ## here when i need to create a new book and update it into books json file       
-def update(name,author,type,description,publishdate,review,image_path):
+def update(name,author,type,description,publishdate,review,image_path,yeartime):
     with open("books.json") as json_file:
      data=json.load(json_file) 
      booky=data["books"]
@@ -155,7 +156,7 @@ def update(name,author,type,description,publishdate,review,image_path):
              choice=False
     if choice==True:        
      #this book isn't in database so i will add it 
-       temp={"name":name,"author":author,"type":type,"description":description,"publish date":publishdate,"reviews":review,"image":image_path}
+       temp={"name":name,"author":author,"type":type,"description":description,"publish date":publishdate,"reviews":review,"image":image_path,"years":yeartime}
        booky.append(temp)
        writinginto(data,"books.json")    
     return choice    
@@ -184,12 +185,15 @@ class book:
     def addreview(self,review):
         self.review= review
         return review
+    def addyears(self,yeartime):
+        self.yeartime=yeartime
+        return yeartime
     def addimage(self,image_path):
         self.image_path=image_path
         return image_path
     ##this method to add all book properties into database
     def addthem(self):
-        check=update(self.name,self.author,self.type,self.description,self.publishdate,self.review,self.image_path)
+        check=update(self.name,self.author,self.type,self.description,self.publishdate,self.review,self.image_path,self.yeartime)
         ##the check boolean variable is to check if the book is already in the data base so we don't need to add it
         ## or it's okay to add it, if check = true , then add it , if not don't add it
         if check==True:
@@ -199,7 +203,7 @@ class book:
 
 
 ##create instance from class book
-def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,image_path):
+def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,image_path,yeartime):
     newbook= book(bookname)
     newbook.addname(bookname)
     newbook.addauthor(bookauthor)
@@ -208,6 +212,7 @@ def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,revie
     newbook.addpublishdate(bookpublishdate)
     newbook.addreview(review)
     newbook.addimage(image_path)
+    newbook.addyears(yeartime)
     check= newbook.addthem()  
     ##create instance and add it if check = true.
     if check==True:
@@ -255,14 +260,40 @@ def addreview(review,name,author):
     ##to accsess the book name
     namebook= mybooks[0]["name"]
     # Read existing data
-    with open("books.json") as json_file:
+    if review!="":
+        with open("books.json") as json_file:
             data = json.load(json_file)
-    booky=data["books"] 
-    for item in booky:
+        booky=data["books"] 
+        for item in booky:
         #when i select the book add reviews on it
-        if item["name"]==namebook and item["author"]==author:
-             item["reviews"].append(review)
-             writinginto(data,"books.json")     
+           if item["name"]==namebook and item["author"]==author:
+               item["reviews"].append(review)
+               writinginto(data,"books.json")     
+## calcualte how many years and months this book has been published 
+# using book publish date               
+def yearcalculating(bookpublishdate):
+        #convert it into date time
+        input_date = datetime.strptime(bookpublishdate, '%Y-%m-%d')
+        current_date = datetime.now()
+        yeartime=""
+        years_difference = current_date.year - input_date.year
+        months_difference = current_date.month - input_date.month
+
+        if current_date.day < input_date.day:
+                 months_difference -= 1
+
+        if months_difference < 0:
+                  years_difference -= 1
+                  months_difference += 12
+ 
+        if years_difference ==0:
+                 if months_difference !=0:
+                      yeartime= str(months_difference) +" months "
+                 else:  yeartime="this month"
+        else: 
+                 yeartime = str(years_difference) + " years " 
+        return yeartime         
+                   
 #-----------------------------------------------------------------------------#   
                   
 ##routing to books page
@@ -288,14 +319,27 @@ def bookdetails(name,author):
 @app.route("/books/details/add reveiw/<name>/<author>")
 def bookreveiw(name,author):
     reveiw=flask.request.args.get("reveiw")
+    if reveiw!=None:
     ##add review by taking the name and author by selecting the book and with the review user add
-    addreview(reveiw,name,author)
+        addreview(reveiw,name,author)
     ##display all books sorted using jinja
-    with open("books.json") as json_file:
-     data=json.load(json_file) 
-     booky=data["books"]
-     sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
-     return render_template("books.html",test=sorted_array)    
+    # with open("books.json") as json_file:
+    #  data=json.load(json_file) 
+    #  booky=data["books"]
+    #  sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
+    #  return render_template("books.html",test=sorted_array)    
+    book= filtering(name,author)
+
+    return render_template("/booksdetails.html",data=book)
+
+# @app.route("/books/details/add rating/<name>/<author>")
+# def bookrating(name, author):
+#     slidervalue= flask.request.args.get("slider")
+#     print("rate")
+#     print(slidervalue)
+#     book= filtering(name,author)
+
+#     return render_template("/booksdetails.html",data=book)
 
 ##routing to search book page
 @app.route("/books/search")
@@ -328,12 +372,20 @@ def bookadd():
        bookdescription=flask.request.args.get("bookdescription")
        bookpublishdate=flask.request.args.get("bookpublishdate")
        bookimage= flask.request.args.get("imgurl")
+       print("publish date")
+       print(bookpublishdate)
+       yeartime=""
+
+       ##i will enhance this code tomorrow and write it into database and add it manually to old books and read details in book details page.
+       if bookpublishdate!=None:
+           ##how many years thie book has been published
+           yeartime=yearcalculating(bookpublishdate)
        review=[]
        ##value check to check if the book is already added before, it it's = false then tell the user that the book is already here
        valuecheck=True
        #if the user fill all text areas then
        if bookname and bookauthor and booktype and bookdescription and bookpublishdate !=None:
-           valuecheck=createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,bookimage)    
+           valuecheck=createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,bookimage,yeartime)    
        if valuecheck==True:   
           return render_template("addbook.html")
        else:

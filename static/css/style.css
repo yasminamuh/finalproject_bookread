@@ -3,11 +3,23 @@
     background-color: blueviolet;
     align-content: center;
 } */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px 20px;
+    overflow-x: hidden;
+}
+
 #bla{
-     display: grid;
+     display: flex;
+     flex-wrap: wrap;
      justify-content:center; 
+     align-items: center;
      grid-template-columns: auto auto auto auto; 
-     gap: 20px;
+     gap: 30px;
      align-items:center;
      margin-top: 15px;
      max-width:100%;
@@ -30,7 +42,7 @@
     height: auto;
     width: 500px;
     border-style:groove;
-    border-radius: 30px;
+    border-radius: 20px;
     border:5px  rgb(255, 206, 206) ;
 
 }
@@ -40,8 +52,8 @@
 }
 .jin img{
     border-radius: 30px;
-    height: 200px;
-    width: 50%;
+    height: 250px;
+    width: 70%;
 }
 .ji{
     border:5px rgba(242, 176, 159, 0.32);
@@ -56,7 +68,7 @@
     /* max-height: max-content; */
     /* right: 100px; */
     height: auto;
-    width: 300px;
+    width: 350px;
     
     /* align-self: center; */
     /* width: auto;    
@@ -65,7 +77,7 @@
     /* display: inline-block; */
 }
 .jin{
-    border:5px  rgb(255, 206, 206) ;
+    border:5px rgb(255, 206, 206) ; 
     border-style:groove;
     border-radius: 30px;
     color:rgba(86, 14, 50, 0.941);
@@ -84,14 +96,14 @@
     font-weight: bold;
 }
 
-.p1,.p2,.p3,.p4,.p5,.p6{
+.p1,.p2,.p3,.p4,.p5,.p6,.p7{
     font-weight: bold;
     font-style: italic;
     color:rgb(86, 14, 50) ;
     font-size: larger;
 }
 
-.d1,.d2,.d3,.d4,.d5,.d6{
+.d1,.d2,.d3,.d4,.d5,.d6,.d7{
     color:rgba(86, 14, 50, 0.715) ;
     font-size: large;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif

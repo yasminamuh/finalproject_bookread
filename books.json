@@ -9,7 +9,8 @@
             "image": "https://i1.sndcdn.com/artworks-2F6PlcReCF9ewVps-kT4CrA-t500x500.jpg",
             "reviews": [
                 "\u0631\u0648\u0627\u064a\u0629 \u062c\u0645\u064a\u0644\u0629 \u062c\u062f\u0627 "
-            ]
+            ],
+            "years": "16 years "
         },
         {
             "name": "\u0645\u0644\u062d\u0645\u0629 \u0627\u0644\u062d\u0631\u0627\u0641\u064a\u0634",
@@ -21,7 +22,8 @@
             "reviews": [
                 "nice",
                 "\u0643\u062a\u0627\u0628 \u0645\u0634\u0648\u0642 \u062c\u062f\u0627"
-            ]
+            ],
+            "years": "47 years "
         },
         {
             "name": "\u0627\u0644\u062d\u0628 \u062a\u062d\u062a \u0627\u0644\u0645\u0637\u0631",
@@ -34,7 +36,8 @@
                 "wow nice",
                 "\u062d\u0644\u0648"
             ],
-            "image": "https://a5dr.com/wiki/wp-content/uploads/2020/03/%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%AD%D8%A8-%D8%AA%D8%AD%D8%AA-%D8%B2%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B7%D8%B1-%D9%86%D8%AC%D9%8A%D8%A8-%D9%85%D8%AD%D9%81%D9%88%D8%B8.jpg"
+            "image": "https://a5dr.com/wiki/wp-content/uploads/2020/03/%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%AD%D8%A8-%D8%AA%D8%AD%D8%AA-%D8%B2%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B7%D8%B1-%D9%86%D8%AC%D9%8A%D8%A8-%D9%85%D8%AD%D9%81%D9%88%D8%B8.jpg",
+            "years": "51 years "
         },
         {
             "name": "\u0641\u064a \u0645\u0645\u0631 \u0627\u0644\u0641\u0626\u0631\u0627\u0646",
@@ -45,7 +48,8 @@
             "reviews": [
                 "nice one"
             ],
-            "image": "https://upload.wikimedia.org/wikipedia/ar/9/97/%D8%BA%D9%84%D8%A7%D9%81_%D8%B1%D9%88%D8%A7%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D9%85%D8%B1_%D8%A7%D9%84%D9%81%D8%A6%D8%B1%D8%A7%D9%86.jpeg"
+            "image": "https://upload.wikimedia.org/wikipedia/ar/9/97/%D8%BA%D9%84%D8%A7%D9%81_%D8%B1%D9%88%D8%A7%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D9%85%D8%B1_%D8%A7%D9%84%D9%81%D8%A6%D8%B1%D8%A7%D9%86.jpeg",
+            "years": "7 years "
         },
         {
             "name": "The First 90 Days",
@@ -57,7 +61,8 @@
                 "okay its nice one , i like it",
                 ""
             ],
-            "image": "https://m.media-amazon.com/images/I/51XqmrgU-3L.jpg"
+            "image": "https://m.media-amazon.com/images/I/51XqmrgU-3L.jpg",
+            "years": "20 years "
         },
         {
             "name": "Death On The Nile",
@@ -65,8 +70,11 @@
             "type": "Crime",
             "description": "Death on the Nile is a work of detective fiction by British writer Agatha Christie, published in the UK by the Collins Crime Club on 1 November 1937[1] and in the US by Dodd, Mead and Company the following year.[2][3] The UK edition retailed at seven shillings and sixpence (7/6)[4] and the US edition at $2.00.[3]  The book features the Belgian detective Hercule Poirot. The action takes place in Egypt, mostly on the River Nile. The novel is unrelated to Christie's earlier short story of the same name, which featured Parker Pyne as the detective",
             "publish date": "1937-11-01",
-            "reviews": [],
-            "image": "https://upload.wikimedia.org/wikipedia/en/9/96/Death_on_the_Nile_First_Edition_Cover_1937.jpg"
+            "reviews": [
+                "good book"
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/en/9/96/Death_on_the_Nile_First_Edition_Cover_1937.jpg",
+            "years": "86 years "
         },
         {
             "name": "Crooked House",
@@ -74,8 +82,11 @@
             "type": "Crime",
             "description": "Crooked House is a work of detective fiction by Agatha Christie first published in the US by Dodd, Mead and Company in March 1949[1] and in the UK by the Collins Crime Club on 23 May of the same year.[2]  The action takes place in and near London in the autumn of 1947. Christie said the titles of this novel and Ordeal by Innocence were her favourites amongst her own works. ",
             "publish date": "1949-03-01",
-            "reviews": [],
-            "image": "https://upload.wikimedia.org/wikipedia/en/b/be/Crooked_House_First_Edition_Cover_1949.jpg"
+            "reviews": [
+                "nice book"
+            ],
+            "image": "https://upload.wikimedia.org/wikipedia/en/b/be/Crooked_House_First_Edition_Cover_1949.jpg",
+            "years": "74 years "
         },
         {
             "name": "Five Little Pigs",
@@ -84,7 +95,8 @@
             "description": "Five Little Pigs is a work of detective fiction by British writer Agatha Christie, first published in the US by Dodd, Mead and Company in May 1942 under the title Murder in Retrospect[1] and in the UK by the Collins Crime Club in January 1943 (although some sources state that publication was in November 1942).[2] The UK first edition carries a copyright date of 1942 and retailed at eight shillings[2] while the US edition was priced at $2.00.[1]  In the book, detective Hercule Poirot investigates five people about a murder committed sixteen years earlier. Caroline Crale died in prison after being convicted of murdering her husband, Amyas Crale, by poisoning him. In her final letter from prison, she claims to be innocent of the murder. Her daughter Carla Lemarchant asks Poirot to investigate this cold case, based on the memories of the people closest to the couple. ",
             "publish date": "1942-05-01",
             "reviews": [],
-            "image": "https://m.media-amazon.com/images/I/71+4O48b6fL._AC_UF1000,1000_QL80_.jpg"
+            "image": "https://m.media-amazon.com/images/I/71+4O48b6fL._AC_UF1000,1000_QL80_.jpg",
+            "years": "81 years "
         },
         {
             "name": "The Lost World ",
@@ -93,7 +105,8 @@
             "description": "The Lost World is a science fiction novel by British writer Sir Arthur Conan Doyle, published by Hodder & Stoughton in 1912, concerning an expedition to a plateau in the Amazon basin of South America where prehistoric animals still survive. It was originally published serially in the Strand Magazine and illustrated by New-Zealand-born artist Harry Rountree during the months of April\u2013November 1912. The character of Professor Challenger was introduced in this book. The novel also describes a war between indigenous people and a vicious tribe of ape-like creatures",
             "publish date": "1912-01-01",
             "reviews": [],
-            "image": "https://mpd-biblio-covers.imgix.net/9781466804647.jpg"
+            "image": "https://mpd-biblio-covers.imgix.net/9781466804647.jpg",
+            "years": "112 years "
         },
         {
             "name": "Crime and Punishment",
@@ -102,7 +115,8 @@
             "description": "Crime and Punishment follows the mental anguish and moral dilemmas of Rodion Raskolnikov, an impoverished ex-student in Saint Petersburg who plans to kill an unscrupulous pawnbroker, an old woman who stores money and valuable objects in her flat. He theorises that with the money he could liberate himself from poverty and go on to perform great deeds, and seeks to convince himself that certain crimes are justifiable if they are committed in order to remove obstacles to the higher goals of 'extraordinary' men. Once the deed is done, however, he finds himself wracked with confusion, paranoia, and disgust. His theoretical justifications lose all their power as he struggles with guilt and horror and is confronted with both internal and external consequences of his deed. ",
             "publish date": "1866-01-01",
             "reviews": [],
-            "image": "https://elhelmbookstores.com/wp-content/uploads/2022/06/image-1-1.png"
+            "image": "https://elhelmbookstores.com/wp-content/uploads/2022/06/image-1-1.png",
+            "years": "158 years "
         },
         {
             "name": "The Gambler",
@@ -111,7 +125,8 @@
             "description": "The Gambler  about a young tutor in the employment of a formerly wealthy Russian general. The novella reflects Dostoevsky's own addiction to roulette, which was in more ways than one the inspiration for the book: Dostoevsky completed the novella in 1866 under a strict deadline to pay off gambling debts.[1]",
             "publish date": "1866-01-01",
             "reviews": [],
-            "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/The_Gambler_%28novel%29_1866_first_edition_cover.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/The_Gambler_%28novel%29_1866_first_edition_cover.jpg",
+            "years": "158 years "
         },
         {
             "name": "The House of the Dead",
@@ -120,16 +135,8 @@
             "description": "The novel portrays the life of convicts in a Siberian prison camp. It is generally considered to be a fictionalised memoir; a loosely-knit collection of descriptions, events and philosophical discussion, organised around theme and character rather than plot, based on Dostoevsky's own experiences as a prisoner in such a setting. Dostoevsky spent four years in a forced-labour prison camp in Siberia following his conviction for involvement in the Petrashevsky Circle. This experience allowed him to describe with great authenticity the conditions of prison life and the characters of the convicts.",
             "publish date": "1860-01-01",
             "reviews": [],
-            "image": "https://m.media-amazon.com/images/I/61wT2BM3JaL.jpg"
-        },
-        {
-            "name": "\u0627\u0644\u0631\u0628\u0627\u0639\u064a\u0627\u062a",
-            "author": "\u0635\u0644\u0627\u062d \u062c\u0627\u0647\u064a\u0646",
-            "type": "\u0623\u0634\u0639\u0627\u0631 \u0628\u0627\u0644\u0639\u0627\u0645\u064a\u0629 \u0627\u0644\u0645\u0635\u0631\u064a\u0629",
-            "description": "\u0627\u0644\u0631\u0628\u0627\u0639\u064a\u0627\u062a \u0647\u064a \u0639\u0628\u0627\u0631\u0629 \u0639\u0646 \u0642\u0648\u0627\u0644\u0628 \u0634\u0639\u0631\u064a\u0629 \u062d\u064a\u0629 \u062a\u062d\u0631\u0631 \u0641\u064a\u0647\u0627 \u0635\u0644\u0627\u062d \u062c\u0627\u0647\u064a\u0646 \u0645\u0646 \u0623\u0633\u0631 \u0627\u0644\u0642\u0627\u0641\u064a\u0629\u060c \u0625\u0630 \u062a\u0628\u062f\u0648 \u0643\u0644 \u0631\u0628\u0627\u0639\u064a\u0629 \u0643\u0627\u0644\u0648\u0645\u0636\u0629 \u0627\u0644\u0645\u062a\u0623\u0644\u0642\u0629 \u0623\u0648 \u0627\u0644\u062d\u062c\u0631 \u0627\u0644\u0643\u0631\u064a\u0645\u060c \u062d\u064a\u062b \u062a\u062a\u062c\u0644\u0649 \u0642\u064a\u0645\u062a\u0647\u0627 \u0641\u064a \u062c\u0648\u0647\u0631\u0647\u0627 \u0644\u0627 \u0641\u064a \u0643\u0628\u0631 \u062d\u062c\u0645\u0647\u0627 \u0648\u0637\u0648\u0644 \u0639\u0628\u0627\u0631\u0627\u062a\u0647\u0627\u060c \u0648\u064a\u0638\u0646 \u0627\u0644\u0642\u0627\u0631\u0626 \u0627\u0644\u0645\u062a\u0639\u062c\u0644 \u0623\u0646\u0651 \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062b\u0627\u0644\u062b \u0647\u0648 \u0627\u0644\u0623\u0636\u0639\u0641 \u0641\u064a \u0627\u0644\u0631\u0628\u0627\u0639\u064a\u0629\u060c \u0648\u0644\u0643\u0646\u0647 \u062d\u0642\u064a\u0642\u0629\u064b \u0639\u0645\u0627\u062f\u064f\u0647\u0627  \u0625\u0642\u0631\u0623 \u0627\u0644\u0645\u0632\u064a\u062f \u0639\u0644\u0649 \u0645\u0648\u0636\u0648\u0639.\u0643\u0648\u0645: https://mawdoo3.com/%D9%86%D8%A8%D8%B0%D8%A9_%D8%B9%D9%86_%D8%B1%D8%A8%D8%A7%D8%B9%D9%8A%D8%A7%D8%AA_%D8%B5%D9%84%D8%A7%D8%AD_%D8%AC%D8%A7%D9%87%D9%8A%D9%86",
-            "publish date": "1963-01-01",
-            "reviews": [],
-            "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1228559895i/4488657.jpg"
+            "image": "https://m.media-amazon.com/images/I/61wT2BM3JaL.jpg",
+            "years": "164 years "
         },
         {
             "name": "\u0623\u0633\u0637\u0648\u0631\u0629 \u0635\u0646\u062f\u0648\u0642 \u0628\u0646\u062f\u0648\u0631\u0627",
@@ -138,7 +145,8 @@
             "description": "\u0648\u0649 \u0627\u0644\u0627\u0646\u0641\u062c\u0627\u0631 \u0627\u0644\u0631\u0647\u064a\u0628 \u0641\u064a \u0627\u0644\u062d\u0627\u0646\u0629\u060c \u0648\u0628\u0646\u0627\u064a\u0629 \u0627\u0644\u0628\u0644\u062f\u064a\u0629\u060c \u0648\u0627\u0644\u0646\u0627\u062f\u0649 \u0627\u0644\u0646\u0633\u0627\u0626\u064a\u060c \u0648\u0627\u0647\u062a\u0632\u062a \u0627\u0644\u0628\u0644\u062f\u0629 \u0643\u0644\u0647\u0627 \u0645\u0646 \u0627\u0644\u0631\u0639\u0628\u060c \u0623\u0643\u062b\u0631 \u0645\u0646\u0647\u0627 \u0628\u0633\u0628\u0628 \u0627\u0644\u0627\u0646\u0641\u062c\u0627\u0631 \u0630\u0627\u062a\u0647\u060c \u0648\u0647\u0648\u062a \u0628\u0642\u0627\u064a\u0627 \u0627\u0644\u0627\u0646\u0641\u062c\u0627\u0631 \u0623\u0631\u0636\u0627\u064b \u0641\u062a\u0644\u0642\u0641\u062a\u0647\u0627 \u0627\u0644\u0646\u064a\u0631\u0627\u0646 \u0627\u0644\u0642\u0627\u062f\u0645\u0629 \u0645\u0646 \u0627\u0644\u063a\u0631\u0628\u060c \u0648\u0641\u064a \u0627\u0644\u0633\u0645\u0627\u0621 \u0644\u0645 \u064a\u0639\u062f \u0623\u062d\u062f \u064a\u0631\u0649 \u0642\u0631\u0635 \u0627\u0644\u0642\u0645\u0631 .. \u0644\u0642\u062f \u063a\u0637\u0649 \u0627\u0644\u062f\u062e\u0627\u0646 \u0643\u0644 \u0634\u064a\u0621 .. \u0641\u064a\u0645\u0627 \u0628\u0639\u062f\u060c \u0643\u0627\u0646 \u0627\u0644\u0642\u0645\u0631 \u0627\u0644\u0645\u0643\u062a\u0645\u0644 \u0647\u0648 \u0627\u0644\u0645\u062a\u0647\u0645 \u0627\u0644\u0631\u0626\u064a\u0633\u064a \u0641\u064a \u0627\u0644\u0642\u0636\u064a\u0629 .. \u0625\u0646 \u0633\u0644\u0648\u0643 \u0627\u0644\u0625\u0646\u0633\u0627\u0646 \u0627\u0644\u0639\u062f\u0648\u0627\u0646\u064a \u0627\u0644\u062c\u0646\u0648\u0646\u064a \u064a\u062a\u0632\u0627\u064a\u062f \u0645\u0639 \u0627\u0644\u0642\u0645\u0631 \u0627\u0644\u0645\u0643\u062a\u0645\u0644\u060c \u0648\u0647\u0630\u0647 \u062d\u0642\u064a\u0642\u0629 \u0639\u0631\u0641\u0647\u0627 \u0627\u0644\u0639\u0644\u0645\u0627\u0621 \u0645\u0646 \u0632\u0645\u0646.",
             "publish date": "2008-01-01",
             "reviews": [],
-            "image": "https://foulabook.com/storage/photo/77640.2018-02-20.1519124968.jpg"
+            "image": "https://foulabook.com/storage/photo/77640.2018-02-20.1519124968.jpg",
+            "years": "16 years "
         },
         {
             "name": "\u0639\u0642\u062f\u0643 \u0627\u0644\u0646\u0641\u0633\u064a\u0629 \u0633\u062c\u0646\u0643 \u0644\u0644\u0623\u0628\u062f",
@@ -147,7 +155,50 @@
             "description": "\u0646\u064f\u0648\u0644\u064e\u062f \u0628\u0641\u0636\u0648\u0644 \u0648\u0634\u063a\u0641 \u0644\u0627\u0643\u062a\u0634\u0627\u0641 \u0627\u0644\u0639\u0627\u0644\u0645\u060c \u0646\u062d\u0627\u0648\u0644 \u062c\u0627\u0647\u062f\u064a\u0646 \u0645\u0639\u0631\u0641\u0629 \u0645\u064e\u0646 \u0646\u062d\u0646\u060c \u0648\u0644\u0643\u0646\u0647\u0645 \u064a\u0635\u0646\u0639\u0648\u0646 \u0645\u0646\u0627 \u0646\u0633\u062e\u064b\u0627\u060c \u0646\u0644\u0642\u0646 \u0645\u0648\u0631\u0648\u062b\u0627\u062a \u0627\u0644\u0623\u0628\u0648\u064a\u0646 \u0627\u0644\u0641\u0643\u0631\u064a\u0629\u060c \u0646\u0631\u0649 \u0627\u0644\u0639\u0627\u0644\u0645 \u0645\u0646 \u062e\u0644\u0627\u0644 \u0639\u064a\u0648\u0646\u0647\u0645\u0627 \u0648\u0644\u064a\u0633 \u0639\u064a\u0648\u0646\u0646\u0627\u060c \u0646\u0633\u062a\u0645\u062f \u0627\u0633\u062a\u062d\u0642\u0627\u0642\u064b\u0627 \u0645\u0632\u064a\u0641\u064b\u0627 \u0645\u0646 \u0627\u0644\u0645\u0627\u0644 \u0623\u0648 \u0627\u0644\u0633\u0644\u0637\u0629 \u0623\u0648 \u0627\u0644\u062c\u0645\u0627\u0644 \u0627\u0644\u062e\u0627\u0631\u062c\u064a \u0623\u0648 \u0634\u062e\u0635 \u064a\u0642\u0628\u0644 \u0628\u0646\u0627 \u0641\u064a \u0639\u0644\u0627\u0642\u0629\u060c \u0642\u062f \u0646\u062a\u0639\u0644\u0642 \u0628\u0645\u064e\u0646 \u064a\u0633\u0644\u062e\u0646\u0627 \u0639\u0646 \u0623\u0646\u0641\u0633\u0646\u0627 \u0648\u0644\u0627 \u0646\u0639\u0631\u0641 \u0627\u0644\u0633\u0631\u060c \u0643\u064a\u0641 \u0646\u062a\u0639\u0627\u0641\u0649 \u0639\u0627\u0637\u0641\u064a\u0651\u064b\u0627 \u0625\u0630\u0627 \u0644\u0645 ... ",
             "publish date": "2021-01-01",
             "reviews": [],
-            "image": "https://cdn.aseeralkotb.com/storage/media/257326/conversions/%D8%B9%D9%82%D8%AF%D9%83-%D8%A7%D9%84%D9%86%D9%81%D8%B3%D9%8A%D8%A9-%D8%B3%D8%AC%D9%86%D9%83-%D8%A7%D9%84%D8%A3%D8%A8%D8%AF%D9%8A-16969-200x300-webp.webp"
+            "image": "https://cdn.aseeralkotb.com/storage/media/257326/conversions/%D8%B9%D9%82%D8%AF%D9%83-%D8%A7%D9%84%D9%86%D9%81%D8%B3%D9%8A%D8%A9-%D8%B3%D8%AC%D9%86%D9%83-%D8%A7%D9%84%D8%A3%D8%A8%D8%AF%D9%8A-16969-200x300-webp.webp",
+            "years": "3 years "
+        },
+        {
+            "name": "\u0627\u0644\u062d\u0628 \u0648\u0627\u0644\u062d\u064a\u0627\u0629",
+            "author": "\u0645\u0635\u0637\u0641\u0649 \u0645\u062d\u0645\u0648\u062f",
+            "type": "\u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u064a\u0629",
+            "description": "\u064a\u062f\u0648\u0631 \u0627\u0644\u0643\u062a\u0627\u0628 \u062d\u0648\u0644 \u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0628\u064a\u0646 \u0627\u0644\u0631\u062c\u0627\u0644 \u0648\u0627\u0644\u0646\u0633\u0627\u0621 \u0628\u0645\u0631\u0627\u062c\u0639\u0629 \u0646\u0642\u062f\u064a\u0629 \u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0627\u0644\u0632\u0648\u062c\u064a\u0629 \u0648\u0643\u064a\u0641\u064a\u0629 \u0627\u0644\u062a\u0639\u0627\u0645\u0644 \u0645\u0639 \u0627\u0644\u062d\u0628 \u0648\u0627\u0644\u0643\u0631\u0647. \u064a\u062d\u0627\u0648\u0644 \u0627\u0644\u0643\u0627\u062a\u0628 \u0623\u0646 \u064a\u0631\u0633\u0645 \u0645\u0644\u0627\u0645\u062d \u0639\u0644\u0627\u0642\u0629 \u0632\u0648\u062c\u064a\u0629 \u0645\u062b\u0627\u0644\u064a\u0629 \u0645\u0628\u0646\u064a\u0629 \u0639\u0644\u0649 \u0627\u0644\u0639\u0646\u0635\u0631 \u0627\u0644\u0623\u0647\u0645 -\u0648\u0641\u0642 \u0646\u0638\u0631 \u0627\u0644\u0643\u0627\u062a\u0628- \u0648\u0647\u0648 \u0648\u062c\u0648\u062f \u0627\u0644\u0633\u0643\u064a\u0646\u0629 \u0641\u064a\u0647\u0627. \u0643\u0645\u0627 \u064a\u0633\u0631\u062f \u0627\u0644\u0643\u0627\u062a\u0628 \u0628\u0639\u0636 \u0627\u0644\u0622\u0631\u0627\u0621 \u0627\u0644\u0646\u0642\u062f\u064a\u0629 \u062a\u062c\u0627\u0647 \u062d\u0631\u064a\u0629 \u0627\u0644\u0645\u0631\u0623\u0629 \u0627\u0644\u062a\u064a \u064a\u0631\u0649 \u0641\u064a\u0647\u0627 \u0623\u062d\u064a\u0627\u0646\u0627 \u0645\u0635\u064a\u062f\u0629 \u0644\u0647\u0627 \u0645\u0646 \u0642\u0628\u0644 \u0627\u0644\u0631\u062c\u0627\u0644 \u0644\u062a\u062a\u062d\u0645\u0644 \u062c\u0632\u0621\u0627\u064b \u0623\u0643\u0628\u0631 \u0645\u0646 \u0623\u0639\u0628\u0627\u0621 \u0627\u0644\u0631\u062c\u0644 \u0648\u0627\u0633\u062a\u063a\u0644\u0627\u0644\u0647\u0627. \u0644\u0643\u0646 \u0644\u0645 \u064a\u0642\u062a\u0635\u0631 \u0627\u0644\u0643\u062a\u0627\u0628 \u0639\u0644\u0649 \u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0628\u064a\u0646 \u0627\u0644\u062c\u0646\u0633\u064a\u0646 \u0648\u0627\u0644\u0645\u0634\u0627\u0639\u0631 \u0627\u0644\u0645\u062a\u0628\u0627\u062f\u0644\u0629 \u0648\u0622\u0644\u064a\u0627\u062a \u0627\u0644\u062d\u0643\u0645 \u0641\u064a \u0627\u0644\u0639\u0644\u0627\u0642\u0627\u062a \u0627\u0644\u0632\u0648\u062c\u064a\u0629 \u0648\u0627\u0644\u062d\u0628\u060c \u0628\u0644 \u062a\u0646\u0648\u0639 \u0644\u064a\u0646\u0627\u0642\u0634 \u0646\u0642\u0627\u0637\u0627\u064b \u0639\u062f\u064a\u062f\u0629 \u0643\u0627\u0644\u0648\u0633\u0637\u064a\u0629 \u0648\u0627\u0644\u0639\u0627\u062f\u0627\u062a \u0627\u0644\u062a\u0642\u0644\u064a\u062f\u064a\u0629 (\u0633\u0645\u0627 \u0628\u0639\u0636\u0647\u0627 \u0628\u0627\u0644\u0648\u0647\u0645) \u0648\u0627\u0644\u062c\u0631\u0627\u0626\u0645 \u0628\u0646\u0638\u0631\u0629 \u0641\u0644\u0633\u0641\u064a\u0629 \u0648\u0623\u062d\u064a\u0627\u0646\u0627 \u0645\u064a\u062a\u0627\u0641\u064a\u0632\u064a\u0642\u064a\u0629. ",
+            "publish date": "1965-01-01",
+            "reviews": [
+                "\u062d\u0628\u064a\u062a \u0627\u0644\u0643\u062a\u0627\u0628 \u0623\u0648\u064a"
+            ],
+            "image": "https://books-library.net/files/books-library.net-07072317Gy8T2.jpg",
+            "years": "59 years "
+        },
+        {
+            "name": "\u0627\u0644\u0631\u0628\u0627\u0639\u064a\u0627\u062a",
+            "author": "\u0635\u0644\u0627\u062d \u062c\u0627\u0647\u064a\u0646",
+            "type": "\u0623\u0634\u0639\u0627\u0631 \u0628\u0627\u0644\u0639\u0627\u0645\u064a\u0629 \u0627\u0644\u0645\u0635\u0631\u064a\u0629",
+            "description": "\u0627\u0644\u0631\u0628\u0627\u0639\u064a\u0627\u062a \u0647\u064a \u0639\u0628\u0627\u0631\u0629 \u0639\u0646 \u0642\u0648\u0627\u0644\u0628 \u0634\u0639\u0631\u064a\u0629 \u062d\u064a\u0629 \u062a\u062d\u0631\u0631 \u0641\u064a\u0647\u0627 \u0635\u0644\u0627\u062d \u062c\u0627\u0647\u064a\u0646 \u0645\u0646 \u0623\u0633\u0631 \u0627\u0644\u0642\u0627\u0641\u064a\u0629\u060c \u0625\u0630 \u062a\u0628\u062f\u0648 \u0643\u0644 \u0631\u0628\u0627\u0639\u064a\u0629 \u0643\u0627\u0644\u0648\u0645\u0636\u0629 \u0627\u0644\u0645\u062a\u0623\u0644\u0642\u0629 \u0623\u0648 \u0627\u0644\u062d\u062c\u0631 \u0627\u0644\u0643\u0631\u064a\u0645\u060c \u062d\u064a\u062b \u062a\u062a\u062c\u0644\u0649 \u0642\u064a\u0645\u062a\u0647\u0627 \u0641\u064a \u062c\u0648\u0647\u0631\u0647\u0627 \u0644\u0627 \u0641\u064a \u0643\u0628\u0631 \u062d\u062c\u0645\u0647\u0627 \u0648\u0637\u0648\u0644 \u0639\u0628\u0627\u0631\u0627\u062a\u0647\u0627",
+            "publish date": "1963-01-01",
+            "reviews": [],
+            "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1228559895i/4488657.jpg",
+            "years": "61 years "
+        },
+        {
+            "name": "Jane Eyre",
+            "author": "Charlotte Bront\u00eb",
+            "type": "Romance",
+            "description": "Charlotte Bront\u00eb tells the story of orphaned Jane Eyre, who grows up in the home of her heartless aunt, enduring loneliness and cruelty. This troubled childhood strengthens Jane's natural independence and spirit - which prove necessary when she finds employment as a governess to the young ward of Byronic, brooding Mr Rochester. As her feelings for Rochester develop, Jane gradually uncovers Thornfield Hall's terrible secret, forcing her to make a choice. Should she stay with Rochester and live with the consequences, or follow her convictions - even if it means leaving the man she loves? A novel of intense power and intrigue, Jane Eyre dazzled readers with its passionate depiction of a woman's search for equality and freedom.",
+            "publish date": "1947-10-19",
+            "reviews": [],
+            "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1692725440i/197321006.jpg",
+            "years": "76 years "
+        },
+        {
+            "name": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "type": "Southern Gothic",
+            "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in June 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was ten. ",
+            "publish date": "1960-07-11",
+            "reviews": [],
+            "image": "https://m.media-amazon.com/images/M/MV5BNmVmYzcwNzMtMWM1NS00MWIyLThlMDEtYzUwZDgzODE1NmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+            "years": "63 years "
         }
     ]
 }
