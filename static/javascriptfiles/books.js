@@ -69,3 +69,16 @@ if (varo!=null){
 }
 else{ content.innerText="welcome "}
 
+const divvat= document.getElementsByClassName("ji");
+const namess=document.getElementsByClassName("d1");
+const authorss=document.getElementsByClassName("d2");
+
+for (let i=0;i<divvat.length;i++)
+{
+    divvat[i].addEventListener("click",()=>{
+        let namevalue= namess[i].innerText;
+        let authorvalue=authorss[i].innerText;
+        window.location="/books/details/" + namevalue + "/" + authorvalue;
+
+    })
+}

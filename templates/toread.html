@@ -13,10 +13,12 @@
   <div id="toreaddiv">
     {% for x in data %}
     <div class="bookadded">
-      <p > {{x}}</p> 
-      <a href="/toread/removefrom/{{x}}">
+      <p  class="namebooks"> {{x["bookname"]}}</p> 
+      <p class="authorbooks">{{x["bookauthor"]}}</p>
+      <a href="/toread/removefrom/{{x['bookname']}}/{{x['bookauthor']}}">
         <button>Remove</button>
       </a>
+
     </div> 
      {%endfor%}
     </div>

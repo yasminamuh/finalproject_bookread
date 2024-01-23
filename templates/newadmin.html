@@ -10,7 +10,7 @@
  <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
-    <h1> Welcome to sign up page</h1>
+    <h1> Add new admin </h1>
   <form action="/newadmincheck" method="get"> 
  
         <input type="email" placeholder="Email: " id="addemail" name="addemail:" required>
@@ -20,7 +20,7 @@
 
  </form>
 
- <!-- <script src="/static/javascriptfiles/signup.js"></script> -->
+ <script src="{{ url_for('static', filename='javascriptfiles/signup.js') }}"></script>
 
 
 </body>

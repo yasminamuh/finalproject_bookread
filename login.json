@@ -74,6 +74,16 @@
             "email": "newanimal@gmail.com",
             "username": "animal",
             "password": "animal"
+        },
+        {
+            "email": "omarabdo@gmail.com",
+            "username": "omar",
+            "password": "omar"
+        },
+        {
+            "email": "amany@gmail.com",
+            "username": "amany",
+            "password": "amany"
         }
     ],
     "admins": [
@@ -96,6 +106,11 @@
             "email": "admin4@gmail.com",
             "username": "admin4",
             "password": "admin4"
+        },
+        {
+            "email": "admin5@gmail.com",
+            "username": "admin5",
+            "password": "admin5"
         }
     ]
 }

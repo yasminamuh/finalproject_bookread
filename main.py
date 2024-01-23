@@ -421,7 +421,7 @@ def bookadd():
     
 ##this function is adding books into userbooks json file, which means it added books to user to read list 
 # it check the name that exist in temp json file then take this name and search for it in userbooks json file, to add books to specific user               
-def selectingbook(bookname):
+def selectingbook(bookname,bookauthor):
     print(bookname)
     ## it opens temp json file to take the user name 
     with open("temp.json") as json_file:
@@ -436,18 +436,20 @@ def selectingbook(bookname):
                #reach the specific user
                if item["name"] == name:
                  #check if the user already added this book to his to read list or not to avoid overriding
-                 for r in item["books"]:
-                   if r ==bookname:
+                 for book in item["books"]:
+                   if book["bookname"] ==bookname and book["bookauthor"]==bookauthor:
                       check=True
                  #the book isn't in user read list so we will add it     
                  if check==False:     
-                    item['books'].append(bookname)
+                    temp_book={"bookname": bookname , "bookauthor":bookauthor}
+                    item['books'].append(temp_book)
            writinginto(data,"userbook.json")  
 
 
 #to delete any book from to read list if i finish it    
-def deletebook(name):
+def deletebookfrom_toread(name,author):
     ##opend the temp json to find which user is here by selecting him name from temp json file
+    print("in functions")
     with open("temp.json") as file:
         users= json.load(file)
     tempuser=users["user"]   
@@ -457,7 +459,9 @@ def deletebook(name):
     usersarr= userbookdata["users"]
     for item in usersarr:
         if item["name"] == tempuser:
-            item["books"].remove(name)
+            for book in item["books"]:
+                if book["bookname"]== name and book["bookauthor"]== author:
+                    item["books"].remove(book)   
     writinginto(userbookdata,"userbook.json")      
 #-----------------------------------------------------------------------------#
 #route to read list !
@@ -474,7 +478,7 @@ def addtoist(name,author):
            return render_template("notuser.html")
        else:  
           #if there is a user so add the book name into his to read list and redirect to add to read page
-          selectingbook(name)
+          selectingbook(name,author)
           return render_template("addtoread.html")
 
 
@@ -495,16 +499,17 @@ def toreadpage():
           for item in datausers:
                if item["name"]==nowname:
                    bok=item["books"]
+                 
           return render_template("toread.html",data=bok)
        else: return render_template("notuser.html")
 
   
 
 ## to remove any book from read list
-@app.route("/toread/removefrom/<x>")
-def delete(x):
+@app.route("/toread/removefrom/<bookname>/<bookauthor>")
+def delete(bookname,bookauthor):
     ## x is the name of the book then we go to deletebook function that take the book name and delete it from user books json file
-    deletebook(x)
+    deletebookfrom_toread(bookname,bookauthor)
     return render_template("removing.html")
 
 #-----------------------------------------------------------------------------#   
@@ -528,12 +533,6 @@ def logout():
 def editbook(name,author):
     ## i will add the functionality..
     return "we will edit a book"                
-
-@app.route("/books/delete/<name>/<author>")
-def deletebook(name,author):
-    ## i will add the functionality..
-    return "we will delete a book"   
-
 
 def add_admin(email,name,password):
     ##open login json file to update it with the new user data!
@@ -572,3 +571,33 @@ def create_new_admin():
       booky=data["books"]       
 
       return render_template("books.html",test=booky)
+    
+
+def delete_whole_book(name,author):
+    with open("books.json")as books_file:
+        books_data=json.load(books_file)
+    books=books_data["books"]
+    for item in books:
+         if item["name"] == name and item["author"] == author:
+             books.remove(item)
+    writinginto(books_data,"books.json")                 
+    with open("userbook.json")as books_file:
+        userbooks_data=json.load(books_file)
+    books=userbooks_data["users"]   
+    for item in books:
+            for book in item["books"]:
+                if book["bookname"]== name and book["bookauthor"]== author:
+                    item["books"].remove(book)          
+    writinginto(userbooks_data,"userbook.json")         
+                 
+
+@app.route("/books/delete/<name>/<author>")
+def deletewholebook(name,author):
+    ## i will add the functionality..
+    delete_whole_book(name,author)
+    with open("books.json") as json_file:
+     data=json.load(json_file) 
+    booky=data["books"]
+     ##i sort the books by publish date (the new comes first)
+    sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
+    return render_template("books.html",test=sorted_array)

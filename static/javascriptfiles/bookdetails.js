@@ -29,3 +29,12 @@ fetch('/api/data')
     }
     // Use the data as needed in your JavaScript code
 })
+
+const review_button= document.getElementById("reviewbtn");
+const review_text= document.getElementById("reviewtxt");
+
+review_text.hidden=true;
+
+review_button.addEventListener("mouseover", ()=>{
+    review_text.hidden= false;
+})
