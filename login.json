@@ -75,5 +75,13 @@
             "username": "animal",
             "password": "animal"
         }
+    ],
+    "admins":
+    [
+        {
+            "email": "admin@gmail.com",
+            "username": "admin",
+            "password": "admin1"
+        }
     ]
 }

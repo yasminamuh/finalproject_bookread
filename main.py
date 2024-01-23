@@ -1,6 +1,6 @@
 import flask
 import json
-from flask import render_template, request , flash , url_for ,redirect
+from flask import render_template, request , jsonify
 from werkzeug.utils import secure_filename
 from datetime import datetime
 ##working with a flask!!
@@ -19,7 +19,12 @@ def writinginto(data,filename):
 def gethomepage():
     return render_template("index.html")   
 #-----------------------------------------------------------------------------#
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    with open ("temp.json") as file:
+          data=json.load(file)
 
+          return jsonify(data)
 #start working in login!
 #-----------------------------------------------------------------------------#
 ##check email and passwords..
@@ -28,12 +33,16 @@ def checkemailandpassword(email,name,password):
         with open("login.json") as json_file:
            data=json.load(json_file)
         arr=data["users"]
+        adminarr= data["admins"]
         choice= False
         for item in arr:
              #check if this data is exist in login json.
              if item["email"]== email and item["password"] == password and item["username"] == name:
-                  choice= True                  
-  
+                  choice= True         
+        for item in adminarr:
+             #check if this data is exist in login json.
+             if item["email"]== email and item["password"] == password and item["username"] == name:
+                  choice= True    
         return choice   
 
 ## writing into userbook json file
@@ -42,6 +51,14 @@ def checkemailandpassword(email,name,password):
 # it added the email of the user( because it's unique) , when the user login
 #it also added the email into a temo json file(which is temporary file that contain only one user)
 def accsessusername(name):
+    isadmin=False
+    with open("login.json") as login_file:
+        logins=json.load(login_file)
+        admins=logins["admins"]
+        for admin in admins:
+            if admin["email"]==name:
+                isadmin=True
+
     with open("userbook.json") as json_file:
            data=json.load(json_file)
     arr=data["users"]
@@ -59,6 +76,7 @@ def accsessusername(name):
     with open("temp.json") as json_file:
            datatemp=json.load(json_file)  
            datatemp["user"] = name
+           datatemp["is admin"]= isadmin
            writinginto(datatemp,"temp.json")
  #-----------------------------------------------------------------------------#
 
