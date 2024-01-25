@@ -1,6 +1,15 @@
 const divweuse= document.getElementById("blo")
 const bookname= document.getElementsByClassName("d1")
 const bookauthor= document.getElementsByClassName("d2")
+const toread_list= document.getElementById("toread");
+const review_button= document.getElementById("reviewbtn");
+const review_text= document.getElementById("reviewtxt");
+
+review_text.hidden=true;
+
+review_button.addEventListener("mouseover", ()=>{
+    review_text.hidden= false;
+})
 
 console.log(bookname[0].innerText)
 fetch('/api/data')
@@ -10,31 +19,21 @@ fetch('/api/data')
     let user= data["user"];
     if (admin == true){
         console.log("okay")
-        const editbutton=document.createElement("button");
         const deletebookbutton=document.createElement("button");
-        editbutton.innerText="Edit book"
         deletebookbutton.innerText=" Delete Book"
-        divweuse.appendChild(editbutton)
         divweuse.appendChild(deletebookbutton)
         let bookname_value= bookname[0].innerText;
+        let bookauthor_value=bookauthor[0].innerText;
         console.log(bookname_value)
-        let bookauthor_value= bookauthor[0].innerText;
-        editbutton.addEventListener("click", () => {
-            window.location="/books/edit/" + bookname_value + "/" + bookauthor_value;
-        });
         deletebookbutton.addEventListener("click", () => {
             window.location="/books/delete/" + bookname_value + "/" + bookauthor_value;
-        });
+        });}
 
-    }
-    // Use the data as needed in your JavaScript code
+     if (user == null)
+     {
+        review_button.style.display="none"
+        toread_list.style.display="none"
+     }
+    
 })
 
-const review_button= document.getElementById("reviewbtn");
-const review_text= document.getElementById("reviewtxt");
-
-review_text.hidden=true;
-
-review_button.addEventListener("mouseover", ()=>{
-    review_text.hidden= false;
-})

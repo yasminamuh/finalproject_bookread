@@ -311,7 +311,45 @@ def yearcalculating(bookpublishdate):
         else: 
                  yeartime = str(years_difference) + " years " 
         return yeartime         
-                   
+
+#create new admin 
+def add_admin(email,name,password):
+    ##open login json file to update it with the new user data!
+    with open("login.json") as json_file:
+      data=json.load(json_file) 
+      admins=data["admins"]
+      choice=True
+      for item in admins:
+          #check if this email is exist to stop creating new account
+          if item["email"]==email:
+              choice=False
+      #this is a new account so we will add it into our file        
+      if choice==True:        
+           tempuser={"email": email,"username": name, "password": password}
+           #we append the users array with this object
+           admins.append(tempuser)
+           writinginto(data,"login.json")
+      return choice       
+
+## deleting the book functionality    
+def delete_whole_book(name,author):
+    ##here we delete it from books.json based on it's name and author 
+    with open("books.json")as books_file:
+        books_data=json.load(books_file)
+    books=books_data["books"]
+    for item in books:
+         if item["name"] == name and item["author"] == author:
+             books.remove(item)
+    writinginto(books_data,"books.json") 
+    ##here we delete it from toread list for any user (userbook json file)                
+    with open("userbook.json")as books_file:
+        userbooks_data=json.load(books_file)
+    books=userbooks_data["users"]   
+    for item in books:
+            for book in item["books"]:
+                if book["bookname"]== name and book["bookauthor"]== author:
+                    item["books"].remove(book)          
+    writinginto(userbooks_data,"userbook.json")                    
 #-----------------------------------------------------------------------------#   
                   
 ##routing to books page
@@ -324,6 +362,42 @@ def bookspage():
      ##i sort the books by publish date (the new comes first)
      sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
      return render_template("books.html",test=sorted_array)
+    
+   
+#routing to create new admin        
+@app.route("/newadmin")
+def newadmin():
+    return render_template("newadmin.html")    
+## adding new admin    
+##has same functionality to register
+@app.route("/newadmincheck")
+def create_new_admin():
+    addemail=flask.request.args.get("addemail:")
+    addusername=flask.request.args.get("adduser:")
+    addpassword=flask.request.args.get("addpass:")
+    signcheck=True
+    if addemail!= "" and addusername!="" and addpassword!="":
+      signcheck= add_admin(addemail,addusername,addpassword)
+      ##if it's a new admin go and add his email into userbook json file so he will have a to read list
+      if signcheck==True:  
+       accsessusername(addemail)
+      with open("books.json") as json_file:
+         data=json.load(json_file) 
+      booky=data["books"]       
+
+      return render_template("books.html",test=booky)
+##route for deleting a specific book    
+@app.route("/books/delete/<name>/<author>")
+def deletewholebook(name,author):
+    ## i will add the functionality..
+    delete_whole_book(name,author)
+    with open("books.json") as json_file:
+     data=json.load(json_file) 
+    booky=data["books"]
+     ##i sort the books by publish date (the new comes first)
+    sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
+    return render_template("books.html",test=sorted_array)
+
 
 ##routing to book details page
 @app.route("/books/details/<name>/<author>")
@@ -339,25 +413,9 @@ def bookreveiw(name,author):
     reveiw=flask.request.args.get("reveiw")
     if reveiw!=None:
     ##add review by taking the name and author by selecting the book and with the review user add
-        addreview(reveiw,name,author)
-    ##display all books sorted using jinja
-    # with open("books.json") as json_file:
-    #  data=json.load(json_file) 
-    #  booky=data["books"]
-    #  sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
-    #  return render_template("books.html",test=sorted_array)    
+        addreview(reveiw,name,author) 
     book= filtering(name,author)
-
     return render_template("/booksdetails.html",data=book)
-
-# @app.route("/books/details/add rating/<name>/<author>")
-# def bookrating(name, author):
-#     slidervalue= flask.request.args.get("slider")
-#     print("rate")
-#     print(slidervalue)
-#     book= filtering(name,author)
-
-#     return render_template("/booksdetails.html",data=book)
 
 ##routing to search book page
 @app.route("/books/search")
@@ -528,76 +586,4 @@ def logout():
         else: return render_template("notuser.html")
 
 
-##--------------------
-@app.route("/books/edit/<name>/<author>")
-def editbook(name,author):
-    ## i will add the functionality..
-    return "we will edit a book"                
 
-def add_admin(email,name,password):
-    ##open login json file to update it with the new user data!
-    with open("login.json") as json_file:
-      data=json.load(json_file) 
-      admins=data["admins"]
-      choice=True
-      for item in admins:
-          #check if this email is exist to stop creating new account
-          if item["email"]==email:
-              choice=False
-      #this is a new account so we will add it into our file        
-      if choice==True:        
-           tempuser={"email": email,"username": name, "password": password}
-           #we append the users array with this object
-           admins.append(tempuser)
-           writinginto(data,"login.json")
-      return choice  
-
-@app.route("/newadmin")
-def newadmin():
-    return render_template("newadmin.html")        
-@app.route("/newadmincheck")
-def create_new_admin():
-    addemail=flask.request.args.get("addemail:")
-    addusername=flask.request.args.get("adduser:")
-    addpassword=flask.request.args.get("addpass:")
-    signcheck=True
-    if addemail!= "" and addusername!="" and addpassword!="":
-      signcheck= add_admin(addemail,addusername,addpassword)
-      ##if it's a new user go and add his email into userbook json file so he will have a to read list
-      if signcheck==True:  
-       accsessusername(addemail)
-      with open("books.json") as json_file:
-         data=json.load(json_file) 
-      booky=data["books"]       
-
-      return render_template("books.html",test=booky)
-    
-
-def delete_whole_book(name,author):
-    with open("books.json")as books_file:
-        books_data=json.load(books_file)
-    books=books_data["books"]
-    for item in books:
-         if item["name"] == name and item["author"] == author:
-             books.remove(item)
-    writinginto(books_data,"books.json")                 
-    with open("userbook.json")as books_file:
-        userbooks_data=json.load(books_file)
-    books=userbooks_data["users"]   
-    for item in books:
-            for book in item["books"]:
-                if book["bookname"]== name and book["bookauthor"]== author:
-                    item["books"].remove(book)          
-    writinginto(userbooks_data,"userbook.json")         
-                 
-
-@app.route("/books/delete/<name>/<author>")
-def deletewholebook(name,author):
-    ## i will add the functionality..
-    delete_whole_book(name,author)
-    with open("books.json") as json_file:
-     data=json.load(json_file) 
-    booky=data["books"]
-     ##i sort the books by publish date (the new comes first)
-    sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
-    return render_template("books.html",test=sorted_array)

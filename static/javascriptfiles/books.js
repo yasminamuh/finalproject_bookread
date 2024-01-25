@@ -14,6 +14,7 @@ fetch('/api/data')
     let user= data["user"];
     if (admin == true){
         const addbutton=document.createElement("button");
+        addbutton.id="addabook"
         // const editbookbutton= document.createElement("button");
         // const deletebookbutton=document.createElement("button");
         addbutton.innerText="Add a new book"
@@ -69,7 +70,7 @@ if (varo!=null){
 }
 else{ content.innerText="welcome "}
 
-const divvat= document.getElementsByClassName("ji");
+const divvat= document.getElementsByClassName("books_div");
 const namess=document.getElementsByClassName("d1");
 const authorss=document.getElementsByClassName("d2");
 

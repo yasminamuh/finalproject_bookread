@@ -9,11 +9,10 @@
 }
 
 body {
-    padding: 10px 20px;
     overflow-x: hidden;
 }
 
-#bla{
+#contentofbooks{
      display: flex;
      flex-wrap: wrap;
      justify-content:center; 
@@ -46,35 +45,28 @@ body {
     border:5px  rgb(255, 206, 206) ;
 
 }
-.ji img{
-    border-radius: 30px;
-    opacity:0.8;
+.namebooks{
+    font-size: x-large;
 }
+
 .jin img{
     border-radius: 30px;
     height: 250px;
     width: 70%;
 }
-.ji{
+.books_div img{
+    border-radius: 30px;
+    opacity:0.8;
+}
+.books_div{
     border:5px rgba(242, 176, 159, 0.32);
-     /* rgb(255, 206, 206) ; */
     border-style:groove;
     border-radius: 30px;
-    /* text-align: center; */
-    /* overflow: auto;   */
     color:rgba(86, 14, 50, 0.941);
     font-size: large;
     background-color: rgba(242, 176, 159, 0.726);
-    /* max-height: max-content; */
-    /* right: 100px; */
     height: auto;
     width: 350px;
-    
-    /* align-self: center; */
-    /* width: auto;    
-    height: fit-content; */
-    /* box-sizing: content-box; */
-    /* display: inline-block; */
 }
 .jin{
     border:5px rgb(255, 206, 206) ; 
@@ -91,9 +83,10 @@ body {
 #content{
     text-align: center;
     color: rgba(86, 14, 50, 0.701);
-    font-size:xx-large;
+    font-size:60px;
     font-style: italic;
     font-weight: bold;
+    margin-bottom: 20px
 }
 
 .p1,.p2,.p3,.p4,.p5,.p6,.p7{
@@ -119,7 +112,7 @@ body{
     max-width: 100%;
 }
 
-button{
+button, #logout, #reviewbtn,#logout2{
     color:rgba(86, 14, 50, 0.701);
     background-color:rgb(242, 176, 159) ;
     padding: 20px;
@@ -128,20 +121,22 @@ button{
     font-size:medium;
     border-radius: 30px ;
     border-color: rgb(250, 190, 225);
-    margin:20px;}
+    margin:5px;}
 
-#logout, #gotoread ,#addabook{
+/* #logout, #gotoread ,#addabook{
     color:rgba(86, 14, 50, 0.701);
     background-color:rgb(242, 176, 159) ;
     padding: 10px;
     width: auto;
     /* height: auto; */
-    font-size:medium;
+    /* font-size:medium;
     border-radius: 20px ;
     border-color: rgb(250, 190, 225);
-    margin:20px;}
+    margin-left:20px;
+    margin-right: 20px;
+} */ */
 
-input {
+input{
         width: 50%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -152,15 +147,50 @@ input {
         color:rgb(108, 60, 36);
         font-size: large;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     }   
- #addingbook,#bookpublishdate,#addingnewbook,#logout2{
+     }  
+#reviewtxt{
+    background-color:rgb(240, 183, 160);
+    color:rgb(108, 60, 36);
+    border-radius: 20px;
+    text-align: center;
+    width: 50%;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+} 
+#bookname,#bookauthor,#booktype,#bookdescription,#bookimage{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color:rgb(240, 183, 160);
+    border-radius: 20px;
+    color:rgb(108, 60, 36);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+} 
+#bookpublishdate,#addingbook    
+{
+    padding: 15px 20px;
+    color:rgb(108, 60, 36);
+    width: 25%;
+    color:rgba(86, 14, 50, 0.701);
+    background-color:rgb(240, 183, 160);
+    border-radius: 20px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+
+}
+ /* #addingbook,#bookpublishdate,#addingnewbook,#logout2{
     padding: 15px 20px;
     color:rgb(108, 60, 36);
     width: 25%;
     color:rgba(86, 14, 50, 0.701);
 
-
- }    
+ }     */
  #search1{
     width: 50%;
     padding: 12px 20px;
@@ -179,7 +209,7 @@ input {
     background-color:rgb(240, 183, 160) ;
     padding: 10px;
     width: 100px;
-    /* height: auto; */
+
     font-size:large;
     border-radius: 20px ;
     border-color: rgb(250, 190, 225);
