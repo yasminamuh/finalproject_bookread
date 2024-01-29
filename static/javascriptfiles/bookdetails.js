@@ -11,20 +11,17 @@ review_button.addEventListener("mouseover", ()=>{
     review_text.hidden= false;
 })
 
-console.log(bookname[0].innerText)
 fetch('/api/data')
 .then(response => response.json())
 .then(data => {
     let admin= data["is_admin"];
     let user= data["user"];
     if (admin == true){
-        console.log("okay")
         const deletebookbutton=document.createElement("button");
         deletebookbutton.innerText=" Delete Book"
         divweuse.appendChild(deletebookbutton)
         let bookname_value= bookname[0].innerText;
         let bookauthor_value=bookauthor[0].innerText;
-        console.log(bookname_value)
         deletebookbutton.addEventListener("click", () => {
             window.location="/books/delete/" + bookname_value + "/" + bookauthor_value;
         });}

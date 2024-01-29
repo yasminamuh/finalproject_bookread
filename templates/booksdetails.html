@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Book</title>
   <!-- i had problems while loading this css file so if i face any other problems i will use this way! -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/books.css') }}">
 
  <!--- <script src="firstdict.js"></script>-->
 </head>
@@ -14,7 +14,7 @@
     <h1>hello this is books details</h1>
 
     {% for x in data %}
-    <div class="jin"> 
+    <div class="book_details_container"> 
         <img src='{{x["image"]}}'>  
 
         <p class="p1">{{" The Book name is" }} </p><p class="d1">{{x["name"]}}</p>

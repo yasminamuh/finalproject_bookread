@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>New Book</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/books.css') }}">
 
  <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
-    <form action="/add_book" method="get" >
+    <form action="/confirm_book" method="get" >
         <input type="text" placeholder="Name " id="bookname" name="bookname"required>
         <input type="text" placeholder="Book author " id="bookauthor" name="bookauthor" required>
         <input type="text" placeholder="Type " id="booktype" name="booktype"required >

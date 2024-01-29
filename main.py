@@ -433,14 +433,19 @@ def searchpage():
                 sortedoutput = sorted(output, key=lambda x: x["publish date"], reverse=True)
                 return render_template("searchbook.html",test=sortedoutput)
 
-##routing to add new book page
 @app.route("/add_book")
 def bookadd():
-    ##opening the temp json file to make sure that the user that has an account only who can access this functionality
+        ##opening the temp json file to make sure that the user that has an account only who can access this functionality
     with open("temp.json") as file:
         data=json.load(file)
         ##so there is a user who logged in already!
-    if data["user"]!= None:    
+    if data["user"]!= None:   
+         return render_template("addbook.html")
+    else: return render_template("notuser.html")   
+
+##routing to add new book page
+@app.route("/confirm_book")
+def bookadd_confirm():
        ##takes all information about a new book from form in html
        bookname=flask.request.args.get("bookname")
        bookauthor=flask.request.args.get("bookauthor")
@@ -463,11 +468,19 @@ def bookadd():
        if bookname and bookauthor and booktype and bookdescription and bookpublishdate !=None:
            valuecheck=createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,bookimage,yeartime)    
        if valuecheck==True:   
-          return render_template("addbook.html")
+              with open("books.json") as json_file:
+               data=json.load(json_file) 
+              booky=data["books"]
+     ##i sort the books by publish date (the new comes first)
+              sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
+            #   return render_template("books.html",test=sorted_array)
+              book= filtering(bookname,bookauthor)
+      ##printing the book details using jinja
+              return render_template("booksdetails.html",data=book)
        else:
           return render_template("bookishere.html")
      ##if the user didn't login or sign up we redirect him to not user page   
-    else: return render_template("notuser.html")   
+    # else: return render_template("notuser.html")   
 
 
 

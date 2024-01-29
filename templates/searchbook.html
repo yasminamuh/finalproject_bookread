@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Books search</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/books.css') }}">
 
  <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
         {% for x in test %}
-        <div class="jin"> 
+        <div class="book_details_container"> 
           <img src='{{x["image"]}}' width="200px" height="200px">  
 
             <p class="p1">{{" The Book name is" }}</p><p class="d1">{{x["name"]}}</p>

@@ -1,10 +1,7 @@
-
-const logoutbutton= document.getElementById("logout");
 const content= document.getElementById("content");
 const New_admin= document.getElementById("addnewadmin");
-
 const toread_button= document.getElementById("gotoread");
- const forbuttons= document.getElementById("forbuttons");
+const forbuttons= document.getElementById("forbuttons");
 
 fetch('/api/data')
 .then(response => response.json())
@@ -15,8 +12,6 @@ fetch('/api/data')
     if (admin == true){
         const addbutton=document.createElement("button");
         addbutton.id="addabook"
-        // const editbookbutton= document.createElement("button");
-        // const deletebookbutton=document.createElement("button");
         addbutton.innerText="Add a new book"
         forbuttons.appendChild(addbutton)
         addbutton.addEventListener("click", () => {
@@ -50,33 +45,29 @@ fetch('/api/data')
 
 
     }
-    // else {
-    //     logoutbutton.style.display="inline_block";
-    // }
-
 }
 )
 
+let username=localStorage.getItem("user name:");
+if (username!=null){
+    content.innerText="Welcome "+ username;
+}
+else{ content.innerText="Welcome "}
 
 
+const logoutbutton= document.getElementById("logout");
 
 logoutbutton.addEventListener("click", () => {
     localStorage.clear();
-    window.location="/logout";
 });
-varo=localStorage.getItem("user name:");
-if (varo!=null){
-    content.innerText="welcome "+ varo;
-}
-else{ content.innerText="welcome "}
 
-const divvat= document.getElementsByClassName("books_div");
+const books_container= document.getElementsByClassName("books_div");
 const namess=document.getElementsByClassName("d1");
 const authorss=document.getElementsByClassName("d2");
 
-for (let i=0;i<divvat.length;i++)
+for (let i=0;i<books_container.length;i++)
 {
-    divvat[i].addEventListener("click",()=>{
+    books_container[i].addEventListener("click",()=>{
         let namevalue= namess[i].innerText;
         let authorvalue=authorss[i].innerText;
         window.location="/books/details/" + namevalue + "/" + authorvalue;

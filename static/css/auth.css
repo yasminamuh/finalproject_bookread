@@ -4,9 +4,8 @@ body{
     background-repeat:no-repeat;
     text-align: center;
 
-    /* background-color:rgb(250, 190, 225); */
 }
-#qouti{
+#qoute{
     color:rgba(86, 14, 50, 0.74);
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -20,12 +19,7 @@ h1,h2{
     text-align: center;
     color:rgba(86, 14, 50, 0.701);
 }
-#homeindex {
-    text-align: center;
-    
-    color:rgba(86, 14, 50, 0.701);
-    /* background-color:rgb(250, 190, 225) ; */
-}
+
 button{
     color:rgba(86, 14, 50, 0.701);
     background-color:rgb(242, 176, 159) ;
@@ -33,11 +27,11 @@ button{
     width: 200px;
     height: auto;
     font-size:larger;
-    border-radius: 20px ;
     border-color: rgb(250, 190, 225);
     margin:20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 form{
     text-align: center;
 }
@@ -48,11 +42,13 @@ input {
     box-sizing: border-box;
     text-align: center;
     background-color:rgb(240, 183, 160);
-    border-radius: 20px;
     color:rgb(108, 60, 36);
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+.save {  
+    border-radius: 0%;
+}
 
 p{
     font-size: xx-large;

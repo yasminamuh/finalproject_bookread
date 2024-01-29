@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sign up </title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
 
  <!--- <script src="firstdict.js"></script>-->
 </head>
@@ -16,11 +16,11 @@
         <input type="email" placeholder="Email: " id="addemail" name="addemail:" required>
         <input type="text" placeholder="Name: " id="adduser" name ="adduser:" required>
         <input type="password" placeholder="Password: " id="addpassword" name="addpass:" required>
-        <input type="submit" value="Enter" id="save">
+        <input type="submit" value="Enter" class="save">
 
  </form>
 
- <script src="{{ url_for('static', filename='javascriptfiles/signup.js') }}"></script>
+ <script src="{{ url_for('static', filename='javascriptfiles/signup_in.js') }}"></script>
 
 
 </body>

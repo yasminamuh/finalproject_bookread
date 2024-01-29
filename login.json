@@ -84,6 +84,26 @@
             "email": "amany@gmail.com",
             "username": "amany",
             "password": "amany"
+        },
+        {
+            "email": "newaccount@gmail.com",
+            "username": "new account",
+            "password": "new1"
+        },
+        {
+            "email": "newaccount2@gmail.com",
+            "username": "new account2",
+            "password": "new2"
+        },
+        {
+            "email": "newaccount3@gmail.com",
+            "username": "new account3",
+            "password": "new3"
+        },
+        {
+            "email": "newaccount4@gmail.com",
+            "username": "new account4",
+            "password": "new4"
         }
     ],
     "admins": [
@@ -111,6 +131,11 @@
             "email": "admin5@gmail.com",
             "username": "admin5",
             "password": "admin5"
+        },
+        {
+            "email": "adminmo@gmail.com",
+            "username": "adminmo",
+            "password": "adminmo"
         }
     ]
 }
