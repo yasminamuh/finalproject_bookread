@@ -7,14 +7,13 @@
   <title>Sign up </title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
 
- <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
     <h1> Add new admin </h1>
   <form action="/newadmincheck" method="get"> 
  
         <input type="email" placeholder="Email: " id="addemail" name="addemail:" required>
-        <input type="text" placeholder="Name: " id="adduser" name ="adduser:" required>
+        <input type="text" placeholder="Name: " id="adduser" name ="adduser:"  required>
         <input type="password" placeholder="Password: " id="addpassword" name="addpass:" required>
         <input type="submit" value="Enter" class="save">
 

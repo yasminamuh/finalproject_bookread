@@ -1,6 +1,6 @@
 import flask
 import json
-from flask import render_template, request , jsonify
+from flask import render_template , jsonify
 from datetime import datetime
 from pythonfiles.ForClass import createins
 from pythonfiles.ForLoginMethods import *
@@ -14,11 +14,11 @@ app= flask.Flask("main")
 def gethomepage():
     return render_template("index.html")   
 #-----------------------------------------------------------------------------#
+## upload the temp json file to api/data route to make js read it
 @app.route('/api/data', methods=['GET'])
 def get_data():
     with open ("temp.json") as file:
           data=json.load(file)
-
           return jsonify(data)
 #-----------------------------------------------------------------------------#
 ## routing to login page
@@ -45,8 +45,7 @@ def logincheck():
      else:
         return render_template("logincheck.html")
   else: return render_template("login.html") 
-#-----------------------------------------------------------------------------#
-#all done with login  
+
 #-----------------------------------------------------------------------------#
 ##routing to signup!
 @app.route("/signup")
@@ -74,9 +73,7 @@ def signupadd():
       else:
           return render_template("userishere.html")
     else: return render_template("signup.html")
-#-----------------------------------------------------------------------------#
-#all done with sign up 
-               
+              
 #-----------------------------------------------------------------------------#                    
 ##routing to books page
 @app.route("/books")
@@ -94,6 +91,7 @@ def bookspage():
 def newadmin():
     return render_template("newadmin.html")    
 
+#route to create new account into json file.
 @app.route("/newadmincheck")
 def create_new_admin():
     addemail=flask.request.args.get("addemail:")
@@ -155,6 +153,7 @@ def searchpage():
         else:   ##is there is a book found , sort the books displayed using jinja
                 sortedoutput = sorted(output, key=lambda x: x["publish date"], reverse=True)
                 return render_template("searchbook.html",test=sortedoutput)
+        
 ##routing to add new book page
 @app.route("/add_book")
 def bookadd():
@@ -166,6 +165,7 @@ def bookadd():
          return render_template("addbook.html")
        ##the user is not logged in 
     else: return render_template("notuser.html")   
+
 ##confirm addition
 @app.route("/confirm_book")
 def bookadd_confirm():
@@ -256,6 +256,8 @@ def logout():
            writinginto(data,"temp.json")
            return render_template("logout.html")
         else: return render_template("notuser.html")
+
+#-----------------------------------------------------------------------------#
 
 
 

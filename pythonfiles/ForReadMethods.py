@@ -1,11 +1,13 @@
 import json
 
-
+#-----------------------------------------------------------------------------# 
+##dealing with json!!
+#how to update your data into json file (replaces the data inside with this data!)
 def writinginto(data,filename):
     with open(filename,"w") as s: 
         json.dump(data,s,indent=4)
-
- ##this function is adding books into userbooks json file, which means it added books to user to read list 
+#-----------------------------------------------------------------------------#
+##this function is adding books into userbooks json file, which means it added books to user to read list 
 # it check the name that exist in temp json file then take this name and search for it in userbooks json file, to add books to specific user               
 def selectingbook(bookname,bookauthor):
     print(bookname)
@@ -31,7 +33,7 @@ def selectingbook(bookname,bookauthor):
                     item['books'].append(temp_book)
            writinginto(data,"userbook.json")  
 
-
+#-----------------------------------------------------------------------------#
 #to delete any book from to read list if i finish it    
 def deletebookfrom_toread(name,author):
     ##opend the temp json to find which user is here by selecting him name from temp json file
@@ -48,4 +50,5 @@ def deletebookfrom_toread(name,author):
             for book in item["books"]:
                 if book["bookname"]== name and book["bookauthor"]== author:
                     item["books"].remove(book)   
-    writinginto(userbookdata,"userbook.json")             
+    writinginto(userbookdata,"userbook.json")   
+#-----------------------------------------------------------------------------#              

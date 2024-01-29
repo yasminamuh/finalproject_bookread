@@ -6,10 +6,9 @@ import json
 def writinginto(data,filename):
     with open(filename,"w") as s: 
         json.dump(data,s,indent=4)
-
+#-----------------------------------------------------------------------------# 
 ##check email and passwords..
 #returns true if the user is exist and false if there is no user with this email,name and password!
-
 def checkemailandpassword(email,name,password):
         with open("login.json") as json_file:
            data=json.load(json_file)
@@ -28,7 +27,7 @@ def checkemailandpassword(email,name,password):
 
 
 
-## writing into userbook json file
+#-----------------------------------------------------------------------------# 
 
 #this function is adding user name to file userbook json just to save the user name and books he added to read list
 # it added the email of the user( because it's unique) , when the user login
@@ -62,6 +61,7 @@ def accsessusername(name):
            datatemp["is_admin"]= isadmin
            writinginto(datatemp,"temp.json")
 
+#-----------------------------------------------------------------------------# 
 ##here when i need to register and create a new username into login json file "same logic as update!"
 def register(email,name,password):
     ##open login json file to update it with the new user data!
@@ -80,3 +80,4 @@ def register(email,name,password):
            users.append(tempuser)
            writinginto(data,"login.json")
       return choice   
+    #-----------------------------------------------------------------------------# 

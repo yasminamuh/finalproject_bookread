@@ -114,6 +114,11 @@
             "email": "alaa@gmail.com",
             "username": "alaa",
             "password": "alaa1"
+        },
+        {
+            "email": "alaah11@gmail.com",
+            "username": "alaa11",
+            "password": "alaah11"
         }
     ],
     "admins": [

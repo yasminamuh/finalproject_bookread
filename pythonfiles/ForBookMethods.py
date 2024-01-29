@@ -9,10 +9,7 @@ def writinginto(data,filename):
     with open(filename,"w") as s: 
         json.dump(data,s,indent=4)
 
-
- 
-# start with books
-           
+#-----------------------------------------------------------------------------#           
 ## searching for a book by name of a book and an author 
     
 def searching(word):
@@ -30,9 +27,9 @@ def searching(word):
                        bookexist.append(item)
              return bookexist
           else: return ("no books found")             
-
-#filtering(similar to search!) but it only return one item and i don't check if it's already in the data base
-#cause i will call this function when i select the book already with the existing name and author            
+#-----------------------------------------------------------------------------#
+#filtering(similar to search!) but it only return one item and i don't check if it's already in the database
+#because i will call this function when i select the book already with the existing name and author            
 def filtering(name,author):
       with open("books.json") as json_file:
           data=json.load(json_file) 
@@ -43,7 +40,7 @@ def filtering(name,author):
                        boit.append(item)           
       return boit  
 
-
+#-----------------------------------------------------------------------------#
 # add review functionality 
 ## calling filtering function to retrieve array of one book selected by the user and add review into it
 #by searching for it in books json file by name and  updating it's review property
@@ -61,6 +58,7 @@ def addreview(review,name,author):
            if item["name"]==namebook and item["author"]==author:
                item["reviews"].append(review)
                writinginto(data,"books.json")     
+#-----------------------------------------------------------------------------#               
 ## calcualte how many years and months this book has been published 
 # using book publish date               
 def yearcalculating(bookpublishdate):
@@ -86,6 +84,7 @@ def yearcalculating(bookpublishdate):
                  yeartime = str(years_difference) + " years " 
         return yeartime         
 
+#-----------------------------------------------------------------------------#
 #create new admin 
 ## adding new admin    
 ##has same functionality to register
@@ -106,7 +105,8 @@ def add_admin(email,name,password):
            admins.append(tempuser)
            writinginto(data,"login.json")
       return choice       
-
+    
+#-----------------------------------------------------------------------------#
 ## deleting the book functionality    
 def delete_whole_book(name,author):
     ##here we delete it from books.json based on it's name and author 

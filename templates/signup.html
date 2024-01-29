@@ -7,21 +7,18 @@
   <title>Sign up </title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
 
- <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
     <h1> Welcome to sign up page</h1>
   <form action="/signupcheck" method="get"> 
  
         <input type="email" placeholder="Enter your email: " class="email" name="addemail:" required >
-        <input type="text" placeholder="Enter your user name: " class="username" name ="adduser:" required maxlength="15">
+        <input type="text" placeholder="Enter your user name: " class="username" name ="adduser:"  required maxlength="15">
         <input type="password" placeholder="Enter your password: " class="password" name="addpass:" required maxlength="12" minlength="4">
         <input type="submit" value="Enter" class="save">
 
  </form>
  <script src="{{ url_for('static', filename='javascriptfiles/signup_in.js') }}"></script>
-
- <!-- <script src="/static/javascriptfiles/signup.js"></script> -->
 
 
 </body>

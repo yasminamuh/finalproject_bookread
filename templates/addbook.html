@@ -7,7 +7,6 @@
   <title>New Book</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/books.css') }}">
 
- <!--- <script src="firstdict.js"></script>-->
 </head>
 <body>
     <form action="/confirm_book" method="get" >
@@ -21,12 +20,10 @@
         <input type="date" placeholder="Publish date " id="bookpublishdate" name="bookpublishdate" required>
         <input type="submit" value="Enter" id="addingbook">
         </div>
-        <!-- <input type="file" id="bookimage" name="file" accept="image/*" required> -->
     </form>
     <a href="/books">
         <button>Back to Books page</button>
     </a>
-    <!-- <script src="static/javascriptfiles/addbook.js"></script> -->
 
 </body>
 </html>

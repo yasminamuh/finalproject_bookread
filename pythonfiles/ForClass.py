@@ -1,12 +1,12 @@
 import json
 
-
-# start working in books!
 #-----------------------------------------------------------------------------# 
+##dealing with json!!
+#how to update your data into json file (replaces the data inside with this data!)
 def class_writinginto(data,filename):
     with open(filename,"w") as s: 
         json.dump(data,s,indent=4)
-
+#-----------------------------------------------------------------------------# 
 ## here when i need to create a new book and update it into books json file       
 def update(name,author,type,description,publishdate,review,image_path,yeartime):
     with open("books.json") as json_file:
@@ -24,7 +24,7 @@ def update(name,author,type,description,publishdate,review,image_path,yeartime):
        class_writinginto(data,"books.json")    
     return choice    
 
-
+#-----------------------------------------------------------------------------# 
 ##creating first class: BOOK CLASS
 class book:
     def __init__(self,name):
@@ -64,6 +64,7 @@ class book:
         else:
             return False
 
+#-----------------------------------------------------------------------------# 
 
 ##create instance from class book
 def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,image_path,yeartime):
@@ -82,3 +83,5 @@ def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,revie
         return True
     else:
         return False   
+    
+#-----------------------------------------------------------------------------# 
