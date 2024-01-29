@@ -27,7 +27,8 @@ button{
     width: 200px;
     height: auto;
     font-size:larger;
-    border-color: rgb(250, 190, 225);
+    border:0;
+    border-radius: 5px;
     margin:20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -43,11 +44,14 @@ input {
     text-align: center;
     background-color:rgb(240, 183, 160);
     color:rgb(108, 60, 36);
+    border:0;
+    border-radius: 20px;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 .save {  
-    border-radius: 0%;
+    border:0;
+    border-radius: 5px;
 }
 
 p{

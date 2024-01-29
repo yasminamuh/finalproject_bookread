@@ -54,8 +54,9 @@ body {
     opacity:0.8;
 }
 .books_div{
-    border:5px rgba(242, 176, 159, 0.32);
+    border:0 rgba(242, 176, 159, 0.32);
     border-style:groove;
+
     border-radius: 30px;
     color:rgba(86, 14, 50, 0.941);
     font-size: large;
@@ -78,8 +79,9 @@ body {
 #content{
     text-align: center;
     color: rgba(86, 14, 50, 0.701);
-    font-size:60px;
+    font-size:xx-large;
     font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin-bottom: 5px
 }
@@ -114,7 +116,9 @@ button, #logout, #reviewbtn,#logout2{
     width: 200px;
     height: auto;
     font-size:medium;
-    border-color: rgb(250, 190, 225);
+    border:0;
+    border-radius: 5px;
+    /* border-color: rgb(250, 190, 225); */
     margin:5px;}
 
 
@@ -132,6 +136,7 @@ input{
 #reviewtxt{
     background-color:rgb(240, 183, 160);
     color:rgb(108, 60, 36);
+    border: 0;
     border-radius: 20px;
     text-align: center;
     width: 50%;
@@ -171,6 +176,7 @@ input{
     box-sizing: border-box;
     text-align: center;
     background-color:rgb(240, 183, 160);
+    border:0;
     border-radius: 20px;
     color:rgb(108, 60, 36);
     font-size: large;
@@ -183,7 +189,9 @@ input{
     padding: 10px;
     width: 100px;
     font-size:large;
-    border-color: rgb(250, 190, 225);
+    border:0;
+    border-radius: 5px;
+    /* border-color: rgb(250, 190, 225); */
     margin:20px;
  }
  h1,h2{

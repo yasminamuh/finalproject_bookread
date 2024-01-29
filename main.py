@@ -2,11 +2,10 @@ import flask
 import json
 from flask import render_template, request , jsonify
 from datetime import datetime
-from pythonfiles import *
 from pythonfiles.ForClass import createins
-from pythonfiles.ForLoginMethods import accsessusername,checkemailandpassword, register
-from pythonfiles.ForBookMethods import  add_admin, addreview,  delete_whole_book, filtering, searching,writinginto, yearcalculating
-from pythonfiles.ForReadMethods import deletebookfrom_toread, selectingbook
+from pythonfiles.ForLoginMethods import *
+from pythonfiles.ForBookMethods import  *
+from pythonfiles.ForReadMethods import *
 ##working with a flask!!
 app= flask.Flask("main")
 #-----------------------------------------------------------------------------#           
