@@ -104,6 +104,16 @@
             "email": "newaccount4@gmail.com",
             "username": "new account4",
             "password": "new4"
+        },
+        {
+            "email": "try@gmail.com",
+            "username": "try",
+            "password": "try1"
+        },
+        {
+            "email": "alaa@gmail.com",
+            "username": "alaa",
+            "password": "alaa1"
         }
     ],
     "admins": [
@@ -136,6 +146,11 @@
             "email": "adminmo@gmail.com",
             "username": "adminmo",
             "password": "adminmo"
+        },
+        {
+            "email": "admin6@gmail.com",
+            "username": "admin6",
+            "password": "admin6"
         }
     ]
 }

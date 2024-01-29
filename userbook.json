@@ -10,10 +10,6 @@
                 {
                     "bookname": "Death On The Nile",
                     "bookauthor": "Agatha Christie"
-                },
-                {
-                    "bookname": "\u0627\u0644\u062d\u0628 \u062a\u062d\u062a \u0627\u0644\u0645\u0637\u0631",
-                    "bookauthor": "\u0646\u062c\u064a\u0628 \u0645\u062d\u0641\u0648\u0638"
                 }
             ]
         },
@@ -69,6 +65,36 @@
         {
             "name": "newanimal@gmail.com",
             "books": []
+        },
+        {
+            "name": "try@gmail.com",
+            "books": [
+                {
+                    "bookname": "\u0639\u0642\u062f\u0643 \u0627\u0644\u0646\u0641\u0633\u064a\u0629 \u0633\u062c\u0646\u0643 \u0644\u0644\u0623\u0628\u062f",
+                    "bookauthor": "\u064a\u0648\u0633\u0641 \u0627\u0644\u062d\u0633\u064a\u0646\u064a"
+                },
+                {
+                    "bookname": "Crooked House",
+                    "bookauthor": "Agatha Christie"
+                },
+                {
+                    "bookname": "The Lost World ",
+                    "bookauthor": "Arthur Conan Doyle"
+                }
+            ]
+        },
+        {
+            "name": "admin6@gmail.com",
+            "books": []
+        },
+        {
+            "name": "alaa@gmail.com",
+            "books": [
+                {
+                    "bookname": "\u0641\u064a \u0645\u0645\u0631 \u0627\u0644\u0641\u0626\u0631\u0627\u0646",
+                    "bookauthor": "\u0627\u062d\u0645\u062f \u062e\u0627\u0644\u062f \u062a\u0648\u0641\u064a\u0642"
+                }
+            ]
         }
     ]
 }

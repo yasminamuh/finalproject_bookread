@@ -79,7 +79,9 @@
             "type": "Science fiction",
             "description": "The Lost World is a science fiction novel by British writer Sir Arthur Conan Doyle, published by Hodder & Stoughton in 1912, concerning an expedition to a plateau in the Amazon basin of South America where prehistoric animals still survive. It was originally published serially in the Strand Magazine and illustrated by New-Zealand-born artist Harry Rountree during the months of April\u2013November 1912. The character of Professor Challenger was introduced in this book. The novel also describes a war between indigenous people and a vicious tribe of ape-like creatures",
             "publish date": "1912-01-01",
-            "reviews": [],
+            "reviews": [
+                "woow nice"
+            ],
             "image": "https://mpd-biblio-covers.imgix.net/9781466804647.jpg",
             "years": "112 years "
         },

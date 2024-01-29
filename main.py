@@ -1,18 +1,14 @@
 import flask
 import json
 from flask import render_template, request , jsonify
-from werkzeug.utils import secure_filename
 from datetime import datetime
+from pythonfiles import *
+from pythonfiles.ForClass import createins
+from pythonfiles.ForLoginMethods import accsessusername,checkemailandpassword, register
+from pythonfiles.ForBookMethods import  add_admin, addreview,  delete_whole_book, filtering, searching,writinginto, yearcalculating
+from pythonfiles.ForReadMethods import deletebookfrom_toread, selectingbook
 ##working with a flask!!
 app= flask.Flask("main")
-
-#-----------------------------------------------------------------------------#
-##dealing with json!!
-#how to update your data into json file (replaces the data inside with this data!)
-def writinginto(data,filename):
-    with open(filename,"w") as s: 
-        json.dump(data,s,indent=4)
-
 #-----------------------------------------------------------------------------#           
 ##routing to main page
 @app.route("/")
@@ -25,61 +21,6 @@ def get_data():
           data=json.load(file)
 
           return jsonify(data)
-#start working in login!
-#-----------------------------------------------------------------------------#
-##check email and passwords..
-#returns true if the user is exist and false if there is no user with this email,name and password!
-def checkemailandpassword(email,name,password):
-        with open("login.json") as json_file:
-           data=json.load(json_file)
-        arr=data["users"]
-        adminarr= data["admins"]
-        choice= False
-        for item in arr:
-             #check if this data is exist in login json.
-             if item["email"]== email and item["password"] == password and item["username"] == name:
-                  choice= True         
-        for item in adminarr:
-             #check if this data is exist in login json.
-             if item["email"]== email and item["password"] == password and item["username"] == name:
-                  choice= True    
-        return choice   
-
-## writing into userbook json file
-
-#this function is adding user name to file userbook json just to save the user name and books he added to read list
-# it added the email of the user( because it's unique) , when the user login
-#it also added the email into a temo json file(which is temporary file that contain only one user)
-def accsessusername(name):
-    isadmin=False
-    with open("login.json") as login_file:
-        logins=json.load(login_file)
-        admins=logins["admins"]
-        for admin in admins:
-            if admin["email"]==name:
-                isadmin=True
-
-    with open("userbook.json") as json_file:
-           data=json.load(json_file)
-    arr=data["users"]
-    choice=True
-    for item in arr:
-        #check if the user email already exist or not to avoid overriding
-        if item["name"] == name:
-            choice=False
-    #adding a user email into userbook json file        
-    if choice==True:
-        temp={"name":name,"books":[]}
-        arr.append(temp)
-        writinginto(data,"userbook.json")
-    #adding a user email into temp json file    
-    with open("temp.json") as json_file:
-           datatemp=json.load(json_file)  
-           datatemp["user"] = name
-           datatemp["is_admin"]= isadmin
-           writinginto(datatemp,"temp.json")
- #-----------------------------------------------------------------------------#
-
 #-----------------------------------------------------------------------------#
 ## routing to login page
 @app.route("/login")
@@ -108,28 +49,6 @@ def logincheck():
 #-----------------------------------------------------------------------------#
 #all done with login  
 #-----------------------------------------------------------------------------#
-  
-#start working in sign up!
-#-----------------------------------------------------------------------------#  
-##here when i need to register and create a new username into login json file "same logic as update!"
-def register(email,name,password):
-    ##open login json file to update it with the new user data!
-    with open("login.json") as json_file:
-      data=json.load(json_file) 
-      users=data["users"]
-      choice=True
-      for item in users:
-          #check if this email is exist to stop creating new account
-          if item["email"]==email:
-              choice=False
-      #this is a new account so we will add it into our file        
-      if choice==True:        
-           tempuser={"email": email,"username": name, "password": password}
-           #we append the users array with this object
-           users.append(tempuser)
-           writinginto(data,"login.json")
-      return choice       
-#------------------------------------------------
 ##routing to signup!
 @app.route("/signup")
 def getsignuppage():
@@ -158,200 +77,8 @@ def signupadd():
     else: return render_template("signup.html")
 #-----------------------------------------------------------------------------#
 #all done with sign up 
-#-----------------------------------------------------------------------------#   
-    
-# start working in books!
-#-----------------------------------------------------------------------------#        
-## here when i need to create a new book and update it into books json file       
-def update(name,author,type,description,publishdate,review,image_path,yeartime):
-    with open("books.json") as json_file:
-     data=json.load(json_file) 
-     booky=data["books"]
-     choice=True
-    for item in booky:
-        ##i check if the book is already here 
-         if item["name"]==name and item["author"] == author:
-             choice=False
-    if choice==True:        
-     #this book isn't in database so i will add it 
-       temp={"name":name,"author":author,"type":type,"description":description,"publish date":publishdate,"reviews":review,"image":image_path,"years":yeartime}
-       booky.append(temp)
-       writinginto(data,"books.json")    
-    return choice    
-
-
-##creating first class: BOOK CLASS
-class book:
-    def __init__(self,name):
-        self.name=name
-        
-    def addname(self,name):
-        self.name=name
-        return name
-    def addauthor(self,author):
-        self.author=author
-        return author
-    def addtype(self,type):
-        self.type=type
-        return type
-    def adddescription(self,description):
-        self.description=description
-        return description
-    def addpublishdate(self,publishdate):
-        self.publishdate=publishdate
-        return publishdate   
-    def addreview(self,review):
-        self.review= review
-        return review
-    def addyears(self,yeartime):
-        self.yeartime=yeartime
-        return yeartime
-    def addimage(self,image_path):
-        self.image_path=image_path
-        return image_path
-    ##this method to add all book properties into database
-    def addthem(self):
-        check=update(self.name,self.author,self.type,self.description,self.publishdate,self.review,self.image_path,self.yeartime)
-        ##the check boolean variable is to check if the book is already in the data base so we don't need to add it
-        ## or it's okay to add it, if check = true , then add it , if not don't add it
-        if check==True:
-            return True
-        else:
-            return False
-
-
-##create instance from class book
-def createins(bookname,bookauthor,booktype,bookdescription,bookpublishdate,review,image_path,yeartime):
-    newbook= book(bookname)
-    newbook.addname(bookname)
-    newbook.addauthor(bookauthor)
-    newbook.addtype(booktype)
-    newbook.adddescription(bookdescription)
-    newbook.addpublishdate(bookpublishdate)
-    newbook.addreview(review)
-    newbook.addimage(image_path)
-    newbook.addyears(yeartime)
-    check= newbook.addthem()  
-    ##create instance and add it if check = true.
-    if check==True:
-        return True
-    else:
-        return False   
-
-## searching for a book by name of a book and an author 
-    
-def searching(word):
-        with open("books.json") as json_file:
-          data=json.load(json_file) 
-          arr=data["books"]
-          ##an empty array to fill with found books!
-          bookexist=[]
-          ## not to check in books json if the word is null
-          if(word!=""):
-             #looping for each object in our books json file, when found the book by name or author 
-             #we will add this book to bookexist array to return it
-             for item in arr:
-                  if item["name"].lower().find(word.lower())!=-1 or item["author"].lower().find(word.lower())!=-1:
-                       bookexist.append(item)
-             return bookexist
-          else: return ("no books found")        
-
-          
-#filtering(similar to search!) but it only return one item and i don't check if it's already in the data base
-#cause i will call this function when i select the book already with the existing name and author            
-def filtering(name,author):
-      with open("books.json") as json_file:
-          data=json.load(json_file) 
-          arr=data["books"]
-          boit=[]
-          for item in arr:
-               if item["name"].find(name)!= -1 and item["author"].find(author)!=-1:
-                       boit.append(item)           
-      return boit  
-
-
-# add review functionality 
-## calling filtering function to retrieve array of one book selected by the user and add review into it
-#by searching for it in books json file by name and  updating it's review property
-def addreview(review,name,author):   
-    mybooks = filtering(name,author)
-    ##to accsess the book name
-    namebook= mybooks[0]["name"]
-    # Read existing data
-    if review!="":
-        with open("books.json") as json_file:
-            data = json.load(json_file)
-        booky=data["books"] 
-        for item in booky:
-        #when i select the book add reviews on it
-           if item["name"]==namebook and item["author"]==author:
-               item["reviews"].append(review)
-               writinginto(data,"books.json")     
-## calcualte how many years and months this book has been published 
-# using book publish date               
-def yearcalculating(bookpublishdate):
-        #convert it into date time
-        input_date = datetime.strptime(bookpublishdate, '%Y-%m-%d')
-        current_date = datetime.now()
-        yeartime=""
-        years_difference = current_date.year - input_date.year
-        months_difference = current_date.month - input_date.month
-
-        if current_date.day < input_date.day:
-                 months_difference -= 1
-
-        if months_difference < 0:
-                  years_difference -= 1
-                  months_difference += 12
- 
-        if years_difference ==0:
-                 if months_difference !=0:
-                      yeartime= str(months_difference) +" months "
-                 else:  yeartime="this month"
-        else: 
-                 yeartime = str(years_difference) + " years " 
-        return yeartime         
-
-#create new admin 
-def add_admin(email,name,password):
-    ##open login json file to update it with the new user data!
-    with open("login.json") as json_file:
-      data=json.load(json_file) 
-      admins=data["admins"]
-      choice=True
-      for item in admins:
-          #check if this email is exist to stop creating new account
-          if item["email"]==email:
-              choice=False
-      #this is a new account so we will add it into our file        
-      if choice==True:        
-           tempuser={"email": email,"username": name, "password": password}
-           #we append the users array with this object
-           admins.append(tempuser)
-           writinginto(data,"login.json")
-      return choice       
-
-## deleting the book functionality    
-def delete_whole_book(name,author):
-    ##here we delete it from books.json based on it's name and author 
-    with open("books.json")as books_file:
-        books_data=json.load(books_file)
-    books=books_data["books"]
-    for item in books:
-         if item["name"] == name and item["author"] == author:
-             books.remove(item)
-    writinginto(books_data,"books.json") 
-    ##here we delete it from toread list for any user (userbook json file)                
-    with open("userbook.json")as books_file:
-        userbooks_data=json.load(books_file)
-    books=userbooks_data["users"]   
-    for item in books:
-            for book in item["books"]:
-                if book["bookname"]== name and book["bookauthor"]== author:
-                    item["books"].remove(book)          
-    writinginto(userbooks_data,"userbook.json")                    
-#-----------------------------------------------------------------------------#   
-                  
+               
+#-----------------------------------------------------------------------------#                    
 ##routing to books page
 @app.route("/books")
 def bookspage():
@@ -362,14 +89,12 @@ def bookspage():
      ##i sort the books by publish date (the new comes first)
      sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
      return render_template("books.html",test=sorted_array)
-    
-   
+      
 #routing to create new admin        
 @app.route("/newadmin")
 def newadmin():
     return render_template("newadmin.html")    
-## adding new admin    
-##has same functionality to register
+
 @app.route("/newadmincheck")
 def create_new_admin():
     addemail=flask.request.args.get("addemail:")
@@ -384,8 +109,8 @@ def create_new_admin():
       with open("books.json") as json_file:
          data=json.load(json_file) 
       booky=data["books"]       
-
       return render_template("books.html",test=booky)
+    
 ##route for deleting a specific book    
 @app.route("/books/delete/<name>/<author>")
 def deletewholebook(name,author):
@@ -397,7 +122,6 @@ def deletewholebook(name,author):
      ##i sort the books by publish date (the new comes first)
     sorted_array = sorted(booky, key=lambda x: x["publish date"], reverse=True)
     return render_template("books.html",test=sorted_array)
-
 
 ##routing to book details page
 @app.route("/books/details/<name>/<author>")
@@ -432,7 +156,7 @@ def searchpage():
         else:   ##is there is a book found , sort the books displayed using jinja
                 sortedoutput = sorted(output, key=lambda x: x["publish date"], reverse=True)
                 return render_template("searchbook.html",test=sortedoutput)
-
+##routing to add new book page
 @app.route("/add_book")
 def bookadd():
         ##opening the temp json file to make sure that the user that has an account only who can access this functionality
@@ -441,9 +165,9 @@ def bookadd():
         ##so there is a user who logged in already!
     if data["user"]!= None:   
          return render_template("addbook.html")
+       ##the user is not logged in 
     else: return render_template("notuser.html")   
-
-##routing to add new book page
+##confirm addition
 @app.route("/confirm_book")
 def bookadd_confirm():
        ##takes all information about a new book from form in html
@@ -456,8 +180,6 @@ def bookadd_confirm():
        print("publish date")
        print(bookpublishdate)
        yeartime=""
-
-       ##i will enhance this code tomorrow and write it into database and add it manually to old books and read details in book details page.
        if bookpublishdate!=None:
            ##how many years thie book has been published
            yeartime=yearcalculating(bookpublishdate)
@@ -479,65 +201,7 @@ def bookadd_confirm():
               return render_template("booksdetails.html",data=book)
        else:
           return render_template("bookishere.html")
-     ##if the user didn't login or sign up we redirect him to not user page   
-    # else: return render_template("notuser.html")   
-
-
-
-#-----------------------------------------------------------------------------#
-##all done with books page !
-#-----------------------------------------------------------------------------#
-
-#handle to read list!
-    
-##this function is adding books into userbooks json file, which means it added books to user to read list 
-# it check the name that exist in temp json file then take this name and search for it in userbooks json file, to add books to specific user               
-def selectingbook(bookname,bookauthor):
-    print(bookname)
-    ## it opens temp json file to take the user name 
-    with open("temp.json") as json_file:
-           temp=json.load(json_file) 
-           name=temp["user"]
-    check=False
-    ## it opens userbook json file to add books into a user name
-    with open("userbook.json") as json_file:
-           data=json.load(json_file)
-           arr=data["users"] 
-           for item in arr:
-               #reach the specific user
-               if item["name"] == name:
-                 #check if the user already added this book to his to read list or not to avoid overriding
-                 for book in item["books"]:
-                   if book["bookname"] ==bookname and book["bookauthor"]==bookauthor:
-                      check=True
-                 #the book isn't in user read list so we will add it     
-                 if check==False:     
-                    temp_book={"bookname": bookname , "bookauthor":bookauthor}
-                    item['books'].append(temp_book)
-           writinginto(data,"userbook.json")  
-
-
-#to delete any book from to read list if i finish it    
-def deletebookfrom_toread(name,author):
-    ##opend the temp json to find which user is here by selecting him name from temp json file
-    print("in functions")
-    with open("temp.json") as file:
-        users= json.load(file)
-    tempuser=users["user"]   
-    ##we had the name so we will loop for it in userbook json file to retrieve the books and remove the book by book name  
-    with open("userbook.json") as file:
-        userbookdata= json.load(file)
-    usersarr= userbookdata["users"]
-    for item in usersarr:
-        if item["name"] == tempuser:
-            for book in item["books"]:
-                if book["bookname"]== name and book["bookauthor"]== author:
-                    item["books"].remove(book)   
-    writinginto(userbookdata,"userbook.json")      
-#-----------------------------------------------------------------------------#
-#route to read list !
-#-----------------------------------------------------------------------------#   
-    
+#-----------------------------------------------------------------------------#      
 # route to Add to read list page
 @app.route("/addtoread/<name>/<author>")
 def addtoist(name,author):
@@ -551,7 +215,6 @@ def addtoist(name,author):
           #if there is a user so add the book name into his to read list and redirect to add to read page
           selectingbook(name,author)
           return render_template("addtoread.html")
-
 
 ## routing to read list page
 @app.route("/toread")
@@ -574,15 +237,12 @@ def toreadpage():
           return render_template("toread.html",data=bok)
        else: return render_template("notuser.html")
 
-  
-
-## to remove any book from read list
+## routing to remove any book from read list
 @app.route("/toread/removefrom/<bookname>/<bookauthor>")
 def delete(bookname,bookauthor):
     ## x is the name of the book then we go to deletebook function that take the book name and delete it from user books json file
     deletebookfrom_toread(bookname,bookauthor)
     return render_template("removing.html")
-
 #-----------------------------------------------------------------------------#   
 #routing to log out page (saying bye bye)
 @app.route("/logout")
